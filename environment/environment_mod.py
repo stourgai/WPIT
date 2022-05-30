@@ -322,3 +322,5 @@ def carpender_anderson(Kpmax,day,mlt,Rb):
             ne=trough(ne_Lppo,L_array[i],L_ppo)
             ne_final.append(ne)
             L_final.append(L_array[i])
+            
+    return L_final,ne_final

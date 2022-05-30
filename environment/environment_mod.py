@@ -321,15 +321,13 @@ def carpender_anderson(Lsh,Kpmax,day,mlt,Rb):
 #         if L_ppo<=L_array[i]<=8:
 #             ne=trough(ne_Lppo,L_array[i],L_ppo)
 #             ne_final.append(ne)
-#             L_final.append(L_array[i])
-    Lsh   
+#             L_final.append(L_array[i]) 
     
-
     if Lsh<L_ppi:
-        ne_eq=sat_plasmasphere(L_array[i],day,Rb)
+        ne_eq=sat_plasmasphere(Lsh,day,Rb)
     if L_ppi<=Lsh<=L_ppo:
-        ne_eq=plasmapause(L_array[i],L_ppi,ne_lppi,mlt,day,Rb)
+        ne_eq=plasmapause(Lsh,L_ppi,ne_lppi,mlt,day,Rb)
     if L_ppo<=Lsh<=8:
-        ne_eq=trough(ne_Lppo,L_array[i],L_ppo)
+        ne_eq=trough(ne_Lppo,Lsh,L_ppo)
         
     return ne_eq

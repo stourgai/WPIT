@@ -274,7 +274,7 @@ def interpolated_intercept(x, y1, y2):
 
 
 
-def carpender_anderson(Kpmax,day,mlt,Rb):
+def carpender_anderson(Lsh,Kpmax,day,mlt,Rb):
 
     L_plasma=[]
     ne_plasma=[]
@@ -309,18 +309,27 @@ def carpender_anderson(Kpmax,day,mlt,Rb):
 
     ne_Lppo=plasmapause(L_ppo,L_ppi,ne_lppi,mlt,day,Rb)
     # print(ne_Lppo)
-    for i in range(0,len(L_array)):
-        if L_array[i]<L_ppi:
-            ne=sat_plasmasphere(L_array[i],day,Rb)
-            ne_final.append(ne)
-            L_final.append(L_array[i])
-        if L_ppi<=L_array[i]<=L_ppo:
-            ne=plasmapause(L_array[i],L_ppi,ne_lppi,mlt,day,Rb)
-            ne_final.append(ne)
-            L_final.append(L_array[i])
-        if L_ppo<=L_array[i]<=8:
-            ne=trough(ne_Lppo,L_array[i],L_ppo)
-            ne_final.append(ne)
-            L_final.append(L_array[i])
-            
-    return L_final,ne_final
+#     for i in range(0,len(L_array)):
+#         if L_array[i]<L_ppi:
+#             ne=sat_plasmasphere(L_array[i],day,Rb)
+#             ne_final.append(ne)
+#             L_final.append(L_array[i])
+#         if L_ppi<=L_array[i]<=L_ppo:
+#             ne=plasmapause(L_array[i],L_ppi,ne_lppi,mlt,day,Rb)
+#             ne_final.append(ne)
+#             L_final.append(L_array[i])
+#         if L_ppo<=L_array[i]<=8:
+#             ne=trough(ne_Lppo,L_array[i],L_ppo)
+#             ne_final.append(ne)
+#             L_final.append(L_array[i])
+    Lsh   
+    
+
+    if Lsh<L_ppi:
+        ne_eq=sat_plasmasphere(L_array[i],day,Rb)
+    if L_ppi<=Lsh<=L_ppo:
+        ne_eq=plasmapause(L_array[i],L_ppi,ne_lppi,mlt,day,Rb)
+    if L_ppo<=Lsh<=8:
+        ne_eq=trough(ne_Lppo,L_array[i],L_ppo)
+        
+    return ne_eq

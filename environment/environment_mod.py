@@ -158,3 +158,34 @@ def omega_upper_hybrid(wce_arg,wpe_arg,wci_arg,wpi_arg):
     wuh_tmp=fac1+0.5*fac2
     return wuh_tmp
 
+def aeq2alpha(L_arg,lambda_arg,aeq_arg):
+    Blam0=bmag_dipole(L_arg,lambda_arg)
+    print(Blam0)
+    Beq0=bmag_dipole(L_arg,0)
+    print(Beq0)
+    salpha0=np.sin(aeq_arg)*np.sqrt(Blam0/Beq0)
+#     print(np.rad2deg(salpha0))
+    alpha0=np.arcsin(salpha0)
+    
+    return alpha0
+
+def alpha2aeq(L_arg,lambda_arg,alpha_arg):
+    Blam0=bmag_dipole(L_arg,lambda_arg)
+    Beq0=bmag_dipole(L_arg,0)
+    salphaeq0=np.sin(alpha_arg)*np.sqrt(Beq0/Blam0)
+
+    alphaeq0=np.arcsin(salphaeq0)
+    return alphaeq0
+
+
+def momentums(Ekev,alpha,w_h_0):
+    Ejoule0=1.602176487E-16*Ekev
+    gamma0=(Ejoule0/(c.me*(c.c_light**2))) +1
+    speed0=np.sqrt(1- (1/(gamma0**2)))*c.c_light
+    upar0=speed0*np.cos(alpha)
+    uper0=speed0*np.sin(alpha)
+    pper0=gamma0*c.me*uper0
+    ppar0=gamma0*c.me*upar0
+    mu_adiabatic_0=(pper0*pper0)/abs(w_h_0)
+    
+    return upar0,uper0,ppar0,pper0,mu_adiabatic_0,gamma0

@@ -305,7 +305,7 @@ def carpender_anderson(Kpmax,day,mlt,Rb):
     ne_trough=np.asarray(ne_trough)
 
     xc, yc = interpolated_intercept(L_array,ne_plasma,ne_trough)
-    L_ppo=xc
+    L_ppo=xc[0][0]
 
     ne_Lppo=plasmapause(L_ppo,L_ppi,ne_lppi,mlt,day,Rb)
     # print(ne_Lppo)

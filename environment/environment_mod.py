@@ -165,9 +165,9 @@ def omega_upper_hybrid(wce_arg,wpe_arg,wci_arg,wpi_arg):
     return wuh_tmp
 
 def aeq2alpha(L_arg,lambda_arg,aeq_arg):
-    Blam0=bmag_dipole(L_arg,lambda_arg)
+    Blam0=Bmag_dipole(L_arg,lambda_arg)
     print(Blam0)
-    Beq0=bmag_dipole(L_arg,0)
+    Beq0=Bmag_dipole(L_arg,0)
     print(Beq0)
     salpha0=np.sin(aeq_arg)*np.sqrt(Blam0/Beq0)
 #     print(np.rad2deg(salpha0))
@@ -176,8 +176,8 @@ def aeq2alpha(L_arg,lambda_arg,aeq_arg):
     return alpha0
 
 def alpha2aeq(L_arg,lambda_arg,alpha_arg):
-    Blam0=bmag_dipole(L_arg,lambda_arg)
-    Beq0=bmag_dipole(L_arg,0)
+    Blam0=Bmag_dipole(L_arg,lambda_arg)
+    Beq0=Bmag_dipole(L_arg,0)
     salphaeq0=np.sin(alpha_arg)*np.sqrt(Beq0/Blam0)
 
     alphaeq0=np.arcsin(salphaeq0)

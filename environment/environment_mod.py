@@ -184,17 +184,17 @@ def alpha2aeq(L_arg,lambda_arg,alpha_arg):
     return alphaeq0
 
 
-def momentums(Ekev,alpha,w_h_0):
+def momentums(Ekev,alpha):
     Ejoule0=1.602176487E-16*Ekev
-    gamma0=(Ejoule0/(c.me*(c.c_light**2))) +1
-    speed0=np.sqrt(1- (1/(gamma0**2)))*c.c_light
+    gamma0=(Ejoule0/(const.me*(const.c_light**2))) +1
+    speed0=np.sqrt(1- (1/(gamma0**2)))*const.c_light
     upar0=speed0*np.cos(alpha)
     uper0=speed0*np.sin(alpha)
-    pper0=gamma0*c.me*uper0
-    ppar0=gamma0*c.me*upar0
-    mu_adiabatic_0=(pper0*pper0)/abs(w_h_0)
+    pper0=gamma0*const.me*uper0
+    ppar0=gamma0*const.me*upar0
     
-    return upar0,uper0,ppar0,pper0,mu_adiabatic_0,gamma0
+    return upar0,uper0,ppar0,pper0,gamma0
+
 import numpy as np
 import matplotlib.pyplot as plt
 def L_pp(Kpmax):

@@ -1,5 +1,6 @@
 import os
 import sys
+import numpy as np
 current_dir =  os.path.abspath(os.path.dirname('__file__'))
 fpath = os.path.abspath(current_dir + "/../environment")
 sys.path.append(fpath)
@@ -43,26 +44,14 @@ def stix_parameters(w_arg, Ne_arg, NH_arg, NHe_arg, NO_arg, B0mag_arg):
     return S_arg,D_arg,P_arg,R_arg,L_arg
     
     
-def dispersion_stix(S_arg,P_arg,R_arg,L_arg,D_arg,w_wave_arg,theta_arg):
-    #----- solve dispersion relation (find refractive index and k vector)
-    #theta wave normal angle
-    A_arg=S_arg*np.sin(theta_arg)*np.sin(theta_arg)+P_arg*np.cos(theta_arg)*np.cos(theta_arg)
-    B_arg=R_arg*L_arg*np.sin(theta_arg)*np.sin(theta_arg)+S_arg*P_arg*(1+np.cos(theta_arg)*np.cos(theta_arg))
-    C_arg=P_arg*R_arg*L_arg
-#     if B_arg>0:
-#         mu_sq_arg=(B_arg-np.sqrt(B_arg*B_arg-4*A_arg*C_arg))/(2*A_arg)
-#         mu_arg=np.sqrt(mu_sq_arg)
-#     if B_arg<0:
-#         mu_sq_argp=(2*C_arg)/(B_arg+np.sqrt(B_arg*B_arg-4*A_arg*C_arg))
-#         mu_arg=np.sqrt(mu_sq_arg)
-    musq_arg=(B_arg-np.sqrt(B_arg*B_arg-4*A_arg*C_arg))/(2*A_arg)
-    mu_arg=np.sqrt(musq_arg)
-     #refractive index
-    kappa_arg=mu_arg*w_wave_arg/const.c_light #wave number
-    kx_arg=kappa_arg*np.sin(theta_arg) #x component of wave number
-    kz_arg=kappa_arg*np.cos(theta_arg) #z component of wave number
-
-    return mu_arg,kappa_arg,kx_arg,kz_arg
+def ref_index(theta,S,P,R,L):
+    A=S*np.sin(theta)*np.sin(theta)+P*np.cos(theta)*np.cos(theta)
+    B=R*L*np.sin(theta)*np.sin(theta)+P*S*(1+np.cos(theta)*np.cos(theta))
+    C=P*R*L
+    F=np.sqrt(B*B-4*A*C)
+    eta_sq_plus=(B+F)/(2*A)
+    eta_sq_minus=(B-F)/(2*A)
+    return eta_sq_plus,eta_sq_minus
 
 def dispersion_appleton(w_arg,wpe_arg,wce_arg,theta_arg):
     fac1=(wpe_arg*wpe_arg)/(w_arg*w_arg)
@@ -134,3 +123,10 @@ def whistler_waves_li(Bxwc, Bywc, Bzwc, Exwc, Eywc, Ezwc,time,kz,kx,zeta,chi,w_w
     Bzw=Bzwc*np.cos(Phi)
 
     return Bxw, Byw, Bzw, Exw, Eyw, Ezw, Phi
+
+def res_angle(P_arg,S_arg):
+    tansq=-P_arg/S_arg
+    tan=np.sqrt(tansq)
+    thetares=np.arctan(tan)
+    return thetares
+

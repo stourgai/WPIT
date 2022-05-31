@@ -1,3 +1,11 @@
+import os
+import sys
+current_dir =  os.path.abspath(os.path.dirname('__file__'))
+fpath = os.path.abspath(current_dir + "/../environment")
+sys.path.append(fpath)
+
+import  const
+
 def stix_parameters(w_arg, Ne_arg, NH_arg, NHe_arg, NO_arg, B0mag_arg):
     #----calculate Stix paramet_arg
     #N*_arg  densities in m^-3
@@ -32,7 +40,7 @@ def stix_parameters(w_arg, Ne_arg, NH_arg, NHe_arg, NO_arg, B0mag_arg):
     S_arg = (R_arg+L_arg)/2
     D_arg = (R_arg-L_arg)/2
 
-    return S_arg,D_arg,P_arg,R_arg,L_arg,wce_arg
+    return S_arg,D_arg,P_arg,R_arg,L_arg
     
     
 def dispersion_stix(S_arg,P_arg,R_arg,L_arg,D_arg,w_wave_arg,theta_arg):

@@ -149,3 +149,4 @@ def resonant_velocity(m_res_arg,w_wave_arg,kz_arg,wce_arg,alpha_arg):
 
     E_res=(gamma_res-1)*E_rest
     return v_para_res, v_per_res, v_tot_res, E_res,gamma_res
+

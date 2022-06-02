@@ -90,10 +90,24 @@ def whistler_waves_bell(Bxwc_arg, Bywc_arg, Bzwc_arg, Exwc_arg, Eywc_arg, Ezwc_a
 
     return Bxw_arg, Byw_arg, Bzw_arg, Exw_arg, Eyw_arg, Ezw_arg, Phi_arg
 
-def wave_packet(Bw0_arg,lamda_arg):
-    Bwave=Bw0_arg*(np.tanh(-2*np.rad2deg(lamda_arg)-1)+1)/2
+def one_sided_wave_packet(Bw0_arg,lamda_arg,shape,location,direction):
+    if direction =='north':
+        dir=1
+    if direction =='south':
+        dir=-1
+
+
+    Bwave=Bw0_arg*(np.tanh(dir*shape*np.rad2deg(lamda_arg)-2*location)+1)/2
 #     print((np.tanh(-2*np.rad2deg(lamda_arg)-1)+1)/2)
     return Bwave
+
+def two_sided_wave_packet(Bw0_arg,lamda_arg,shape,location):
+    if lamda_arg<0:
+        Bwave=Bw0_arg-Bw0_arg*(np.tanh(-1*shape*np.rad2deg(lamda_arg)-2*location)+1)/2
+    if lamda_arg>0:
+        Bwave=Bw0_arg-Bw0_arg*(np.tanh(1*shape*np.rad2deg(lamda_arg)-2*location)+1)/2
+    return Bwave
+
 
 def whislter_amplitudes_li(mu,P,D,S,Bw_tot_li,psi):
     #Li uses a different approach in defining the wave fields (see notebook for more details)

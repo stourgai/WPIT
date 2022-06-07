@@ -43,7 +43,23 @@ def stix_parameters(w_arg, Ne_arg, NH_arg, NHe_arg, NO_arg, B0mag_arg):
 
     return S_arg,D_arg,P_arg,R_arg,L_arg
     
+def ref_index_parallel_EMIC(wmega_wave,wpe,wce,wpH,wcH,wpO,wcO,wpHe,wcHe):
+    if wpO==0 or wcO==0:
+        Rfac_O=0
+    else:
+        Rfac_O=(wpO*wpO)/(wmega_wave*(wmega_wave-wcO))
+    if wpHe==0 or wcHe==0:
+        Rfac_He=0
+    else:
+        Rfac_He=(wpHe*wpHe)/(wmega_wave*(wmega_wave-wcHe)) 
+        
+    Rfac_e=(wpe*wpe)/(wmega_wave*(wmega_wave+wce))
+    Rfac_H=(wpH*wpH)/(wmega_wave*(wmega_wave-wcH))
     
+
+    R_tmp=1-Rfac_e-Rfac_H-Rfac_O-Rfac_He
+    return R_tmp
+
 def ref_index(theta,S,P,R,L):
     A=S*np.sin(theta)*np.sin(theta)+P*np.cos(theta)*np.cos(theta)
     B=R*L*np.sin(theta)*np.sin(theta)+P*S*(1+np.cos(theta)*np.cos(theta))

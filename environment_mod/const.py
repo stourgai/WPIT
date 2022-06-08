@@ -15,3 +15,4 @@ epsilon0=8.854187817e-12
 eps0=8.854187817e-12
 ms=[me,mH,mHe,mO]  #vector of masses
 qs=[qe,qi,qi,qi]    #vector of charges
+kb=1.380649e-23

@@ -16,3 +16,4 @@ eps0=8.854187817e-12
 ms=[me,mH,mHe,mO]  #vector of masses
 qs=[qe,qi,qi,qi]    #vector of charges
 kb=1.380649e-23
+mu0=1.2566370614e-6

@@ -21,10 +21,7 @@ from waveproperties_mod.X_dispersion import X_dispersion
 from waveproperties_mod.light_dispersion import light_dispersion
 from waveproperties_mod.R_cutoff import R_cutoff
 from waveproperties_mod.L_cutoff import L_cutoff
+from waveproperties_mod.ref_index_parallel_EMIC import ref_index_parallel_EMIC
 
 
 
-from waveproperties_mod.L_dispersion import L_dispersion
-from waveproperties_mod.L_dispersion import L_dispersion
-
-from waveproperties_mod.ref_index_appleton import ref_index_appleton

@@ -26,3 +26,9 @@ from environment_mod.drift_period import drift_period
 from environment_mod.bounce_period import bounce_period
 from environment_mod.loss_cone import loss_cone
 from environment_mod.debye_length import debye_length
+from environment_mod.densities_palsmasphere_sheeley import densities_palsmasphere_sheeley
+from environment_mod.loss_cone_v2 import loss_cone_v2
+
+
+
+

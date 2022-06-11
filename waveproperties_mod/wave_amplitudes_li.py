@@ -7,7 +7,7 @@ sys.path.append(fpath)
 
 from environment_mod import const
 
-#####waveproperties_mod.wave_amplitudes_jasna##############
+#####waveproperties_mod.wave_amplitudes_li##############
 
 #Description:Routine to calculate the wave amplitudes
 #Inputs:

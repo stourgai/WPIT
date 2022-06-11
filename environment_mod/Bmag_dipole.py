@@ -2,12 +2,12 @@ import numpy as np
 
 #####environment_mod.Bmag_dipole###############################################
 
-#Description:**Routine to calculate the geomagnetic dipole field strength**
+#Description:Routine to calculate the geomagnetic dipole field strength
 #Inputs:
-# **L_arg**: L shell
-# **lamda_arg**: magnetic latitude in rad
+# L_arg: L shell
+# lamda_arg: magnetic latitude in rad
 #Outputs:
-# **Bmag**: Geomagnetic field in T
+# Bmag: Geomagnetic field in T
 
 #############################################################################
 

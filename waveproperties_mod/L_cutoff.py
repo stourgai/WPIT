@@ -5,7 +5,7 @@ current_dir =  os.path.abspath(os.path.dirname('__file__'))
 fpath = os.path.abspath(current_dir + "/..")
 sys.path.append(fpath)
 
-#####L_cutoff.dielectric_tensor_warm##############################
+#####L_cutoff.L_cutoff##############################
 
 #Description:Cut-off frequency for L-mode waves
 #Inputs:

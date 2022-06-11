@@ -7,6 +7,29 @@ sys.path.append(fpath)
 
 from environment_mod import const
 
+#####waveproperties_mod.warm_stix_parameters##############
+
+#Description:Calculate Stix parameters with warm plasma corrections
+#Inputs:
+# S_cold: Stix S parameter
+# D_cold: Stix S parameter
+# P_cold: Stix S parameter
+# Te: Electron temperature in eV
+# Ti: Ion temperature in eV
+# mu_warm: warm plasma refractive index
+# K_e:the electron warm dielectric tensor compoments
+# K_H:the hydrogen warm dielectric tensor compoments
+# K_He:the helium warm dielectric tensor compoments
+# K_O: the oxygen warm dielectric tensor compoments 
+#Outputs:
+# S_warm: warm plasma corrected Stix S
+# D_warm: warm plasma corrected Stix D
+# P_warm: warm plasma corrected Stix P
+# R_warm: warm plasma corrected Stix R
+# L_warm: warm plasma corrected Stix L
+#################################################################
+
+
 def warm_stix_parameters(S_cold,D_cold,P_cold,Te,Ti,mu_warm,Ke,KH,KHe,KO):
     Te_kelvin=Te*11604.5250061598  
     Ti_kelvin=Ti*11604.5250061598  

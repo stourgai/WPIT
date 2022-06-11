@@ -7,6 +7,25 @@ sys.path.append(fpath)
 
 from environment_mod import const
 
+#####waveproperties_mod.wave_amplitudes_bell##############
+
+#Description:Routine to calculate the wave amplitudes
+#Inputs:
+# mu_arg: the refractive index
+# P_arg: Stix P parameter
+# D_arg: Stix D parameter
+# S_arg: Stix S parameter
+# Byw_arg: By component of the wave in T
+# theta_arg: wave normal angle in rad
+#Outputs:
+# Bxw_arg:Bx component of the wave in T
+# Byw_arg:By component of the wave in T
+# Bzw_arg:Bz component of the wave in T
+# Exw_arg:Ex component of the wave in V/m
+# Eyw_arg:Ey component of the wave in V/m
+# Ezw_arg:Ez component of the wave in V/m
+#################################################################
+
 def wave_amplitudes_bell(mu_arg,P_arg,D_arg,S_arg,Byw_arg,theta_arg):
 
     mu_sq_arg=mu_arg**2

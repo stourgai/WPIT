@@ -1,6 +1,17 @@
 
 import numpy as np
 
+#####waveproperties_mod.gendrin_angle##############################
+
+#Description:Routine to calculate the Gendrin angle
+#Inputs:
+# w_wave_arg: wave frequency
+# wlhr_arg: lower hybrid resonance frequency
+# wce_arg: electron gyrofrequency
+#Outputs:
+# th_gen: Gendrin angle in rad
+
+#####################################################################
 
 def gendrin_angle(w_wave_arg,wlhr_arg,wce_arg):
     if w_wave_arg<wlhr_arg:

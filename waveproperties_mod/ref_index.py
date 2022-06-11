@@ -7,6 +7,27 @@ sys.path.append(fpath)
 
 from environment_mod import const
 
+#####waveproperties_mod.ref_index##############################
+
+#Description:Routine to calculate the the refractive index and the wave numbers
+#Inputs:
+# theta: wave normal angle in rad
+# S:Stix S parameter
+# P:Stix P parameter
+# R:Stix R parameter
+# L:Stix L parameter
+# D:Stix D parameter
+# w_wave_arg: wave frequency
+#Outputs:
+# eta_sq_plus: the plus (+) root of the dispersion relation
+# eta_sq_minus: the minus (-) root of the dispersion relation
+# ref_ind: refractive index (for the 𝑛2>0 root)
+# kappa: wave number
+# kappa_par: parallel component of the wave number
+# kappa_per: perpendicular component of the wave number
+
+##############################################################
+
 def ref_index(theta_arg,w_wave_arg,S_arg,P_arg,R_arg,L_arg):
     A=S_arg*np.sin(theta_arg)*np.sin(theta_arg)+P_arg*np.cos(theta_arg)*np.cos(theta_arg)
     B=R_arg*L_arg*np.sin(theta_arg)*np.sin(theta_arg)+P_arg*S_arg*(1+np.cos(theta_arg)*np.cos(theta_arg))

@@ -7,6 +7,24 @@ sys.path.append(fpath)
 
 from environment_mod import const
 
+#####waveproperties_mod.stix_parameters##############################
+
+#Description:Routine to calculate the the Stix parameters
+#Inputs:
+# w_arg: wave frequency in Hz
+# Ne_arg: electron number density in m^-3
+# NH_arg: H+ number density in m^-3 (if available, else 0)
+# NHe_arg: He+ number density in m^-3 (if available, else 0)
+# NO_arg: O+ number density in m^-3 (if available, else 0)
+# B0mag_arg: Geomagnetic field in T
+#Outputs:
+# Sstix: S parameter
+# Dstix: D parameter
+# Pstix: P parameter
+# Rstix: R parameter
+# Lstix: L parameter
+##############################################################
+
 def stix_parameters(w_arg, Ne_arg, NH_arg, NHe_arg, NO_arg, B0mag_arg):
     #----calculate Stix paramet_arg
     #N*_arg  densities in m^-3

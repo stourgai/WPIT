@@ -7,6 +7,25 @@ sys.path.append(fpath)
 
 from environment_mod import const
 
+#####waveproperties_mod.wave_amplitudes_jasna##############
+
+#Description:Routine to calculate the wave amplitudes
+#Inputs:
+# P: Stix P parameter
+# D: Stix D parameter
+# S: Stix S parameter
+# theta_arg: wave normal angle in rad
+# ref_arg: refractive index
+# power_arg: wave Poynting flux in mW/m^2
+#Outputs:
+# Bxw_arg:Bx component of the wave in T
+# Byw_arg:By component of the wave in T
+# Bzw_arg:Bz component of the wave in T
+# Exw_arg:Ex component of the wave in V/m
+# Eyw_arg:Ey component of the wave in V/m
+# Ezw_arg:Ez component of the wave in V/m
+#################################################################
+
 
 def wave_amplitudes_jasna(P_arg,S_arg,D_arg,theta_arg,ref_arg,power_arg):
     musq=ref_arg*ref_arg

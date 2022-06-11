@@ -10,6 +10,21 @@ from environment_mod import const
 
 import numpy as np
 
+
+#####waveproperties_mod.O_dispersion##############################
+
+#Description:Dispersion relation of O-mode (ordinary) wave
+#Inputs:
+# w: wave frequency
+# wpe: electron plasma frequency
+# wpH: hydrogen plasma frequency
+# wpHe: helium plasma frequency (if available, else 0)
+# wpO: oxygen plasma frequency (if available, else 0)
+#Outputs:
+# nsq_tmp: squared refractive index
+# kappa_tmp: wave number
+#####################################################################
+
 def O_dispersion(w,wpe,wpH,wpHe,wpO):
     nsq_tmpe=(wpe*wpe)/(w*w)
     nsq_tmpH=(wpH*wpH)/(w*w)

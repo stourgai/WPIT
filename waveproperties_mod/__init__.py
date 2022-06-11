@@ -22,6 +22,10 @@ from waveproperties_mod.light_dispersion import light_dispersion
 from waveproperties_mod.R_cutoff import R_cutoff
 from waveproperties_mod.L_cutoff import L_cutoff
 from waveproperties_mod.ref_index_parallel_EMIC import ref_index_parallel_EMIC
+from waveproperties_mod.warm_refractive_index import warm_refractive_index
+from waveproperties_mod.dielectric_tensor_warm import dielectric_tensor_warm
+from waveproperties_mod.dielectric_tensor_cold import dielectric_tensor_cold
+from waveproperties_mod.warm_stix_parameters import warm_stix_parameters
 
 
 

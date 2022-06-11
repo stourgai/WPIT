@@ -7,6 +7,29 @@ sys.path.append(fpath)
 
 from environment_mod import const
 
+#####waveproperties_mod.warm_refractive_index##############
+
+#Description:Calculate the refractive index accounting warm plasma corrections
+#Inputs:
+# K_e:the electron warm dielectric tensor compoments
+# K_H:the hydrogen warm dielectric tensor compoments
+# K_He:the helium warm dielectric tensor compoments
+# K_O: the oxygen warm dielectric tensor compoments
+# psi_arg: wave normal angle in rad
+# Te: electron temperature in eV
+# Ti: ion temperature in eV
+# K110: K11 componento of the cold dielectric tensor
+# K220: K22 componento of the cold dielectric tensor
+# K330: K33 componento of the cold dielectric tensor
+# K120: K12 componento of the cold dielectric tensor
+# w_wave_arg: wave frequency
+#Outputs:
+# ref_ind: refractive index
+# kappa: warm wave number
+# kappa_par: warm parallel wave number
+# kappa_per: warm perpendicular wave number
+#################################################################
+
 def warm_refractive_index(K_e,K_H,K_He,K_O,psi_arg,Te,Ti,K110,K220,K330,K120,w_wave_arg):
     
     Te_kelvin=Te*11604.5250061598  

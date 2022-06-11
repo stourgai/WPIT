@@ -7,6 +7,25 @@ sys.path.append(fpath)
 
 from environment_mod import const
 
+#####waveproperties_mod.wave_amplitudes_jasna##############
+
+#Description:Routine to calculate the wave amplitudes
+#Inputs:
+# mu: the refractive index
+# P: Stix P parameter
+# D: Stix D parameter
+# S: Stix S parameter
+# Bw_tot_li: magnitude of the magentic field of the wave in T
+# psi: wave normal angle in rad
+#Outputs:
+# Bxw_arg:Bx component of the wave in T
+# Byw_arg:By component of the wave in T
+# Bzw_arg:Bz component of the wave in T
+# Exw_arg:Ex component of the wave in V/m
+# Eyw_arg:Ey component of the wave in V/m
+# Ezw_arg:Ez component of the wave in V/m
+#################################################################
+
 def wave_amplitudes_li(mu,P,D,S,Bw_tot_li,psi):
     #Li uses a different approach in defining the wave fields (see notebook for more details)
 

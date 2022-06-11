@@ -7,6 +7,25 @@ sys.path.append(fpath)
 
 from environment_mod import const
 
+#####waveproperties_mod.dielectric_tensor_cold###############################################
+
+#Description:Calculate the dielectric tensor with warm plasma corrections
+#Inputs:
+# w_wave: wave frequency
+# wce_arg: 𝑒 plasma frequency
+# wpe_arg: 𝑒 cyclotron frequency
+# wcH_arg: 𝐻+ cyclotron frequency
+# wpH_arg: 𝐻+ plasma frequency
+# wcHe_arg: 𝐻𝑒+ cyclotron frequency
+# wpHe_arg: 𝐻𝑒+ plasma frequency
+# wcO_arg: 𝑂+ cyclotron frequency
+# wpO_arg: 𝑂+ plasma frequency
+
+#Outputs:
+# K_11,K_12,K_13,K_21,K_22,K_23,K_31,K_32,K_33: the cold dielectric tensor compoments 
+
+#############################################################################
+
 def dielectric_tensor_cold(w_wave,wce_arg,wpe_arg,wcH_arg,wpH_arg,wcHe_arg,wpHe_arg,wcO_arg,wpO_arg):
     X_e=(wpe_arg*wpe_arg)/(w_wave*w_wave)
     X_H=(wpH_arg*wpH_arg)/(w_wave*w_wave)    

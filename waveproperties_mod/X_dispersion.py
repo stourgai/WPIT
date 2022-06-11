@@ -10,6 +10,18 @@ from environment_mod import const
 
 import numpy as np
 
+#####waveproperties_mod.X_dispersion##############################
+
+#Description:Dispersion relation of X-mode (extra-ordinary) wave
+#Inputs:
+# w: wave frequency
+# wpe: electron plasma frequency
+# wlh: lower hybrid resonance frequency
+#Outputs:
+# nsq_tmp: squared refractive index
+# kappa_tmp: wave number
+#####################################################################
+
 def X_dispersion(w,wpe,wlh):
     fac1=((wpe*wpe)/(w*w))
     fac2=((w*w-wpe*wpe)/(w*w-wlh*wlh))

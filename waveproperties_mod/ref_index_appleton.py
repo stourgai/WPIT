@@ -7,6 +7,24 @@ sys.path.append(fpath)
 
 from environment_mod import const
 
+#####waveproperties_mod.ref_index_appleton##############################
+
+#Description:Routine to calculate the the refractive index and the wave numbers
+#Inputs:
+# w_arg: wave frequency
+# wpe_arg: electron plasma frequency
+# wce_arg: electron cyclotron frequency
+# theta_arg: wave normal angle in rad
+#Outputs:
+# eta_sq_plus: the plus (+) root of the dispersion relation
+# eta_sq_minus: the minus (-) root of the dispersion relation
+# ref_ind: refractive index (for the 𝑛2>0 root)
+# kappa: wave number
+# kappa_par: parallel component of the wave number
+# kappa_per: perpendicular component of the wave number
+
+##############################################################
+
 def ref_index_appleton(w_arg,wpe_arg,wce_arg,theta_arg):
     fac1=(wpe_arg*wpe_arg)/(w_arg*w_arg)
     fac2=(wce_arg*wce_arg*np.sin(theta_arg)*np.sin(theta_arg))/(2*(w_arg*w_arg-wpe_arg*wpe_arg))

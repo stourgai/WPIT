@@ -5,6 +5,17 @@ current_dir =  os.path.abspath(os.path.dirname('__file__'))
 fpath = os.path.abspath(current_dir + "/..")
 sys.path.append(fpath)
 
+#####L_cutoff.dielectric_tensor_warm##############################
+
+#Description:Cut-off frequency for L-mode waves
+#Inputs:
+# wpe: electron plasma frequency
+# wce: electron cyclotron frequency
+#Outputs:
+# tmp: Cut-off frequency for L-mode waves
+
+##################################################################
+
 from environment_mod import const
 
 

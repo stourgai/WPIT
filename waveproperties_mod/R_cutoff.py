@@ -7,8 +7,16 @@ sys.path.append(fpath)
 
 from environment_mod import const
 
+#####waveproperties_mod.R_cutoff##############################
 
-import numpy as np
+#Description:Cut-off frequency for R-mode waves
+#Inputs:
+# wpe: electron plasma frequency
+# wce: electron cyclotron frequency
+#Outputs:
+# tmp: Cut-off frequency for R-mode waves
+
+##############################################################
 
 def R_cutoff(wce,wpe):
     sqrfac=np.sqrt(wce*wce+4*wpe*wpe)

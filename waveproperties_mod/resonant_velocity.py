@@ -7,6 +7,22 @@ sys.path.append(fpath)
 
 from environment_mod import const
 
+#####waveproperties_mod.resonant_velocity##############################
+
+#Description:Routine to calculate the resonant velocity and the resonant energy
+#Inputs:
+# m_res_arg: resonance harmonic number
+# w_wave_arg: wave frequency
+# kz_arg: z component of the wave number
+# wce_arg: gyrofrequency
+# alpha_arg: local pitch angle in rad
+#Outputs:
+# v_para_res:parallel resonant velocity
+# v_per_res:perpendicular resonant velocity
+# v_tot_res:total resonant velocity
+# E_res:resonant energy in ergs
+# gamma_res: resonant Lorentz factor
+##############################################################
 
 def resonant_velocity(m_res_arg,w_wave_arg,kz_arg,wce_arg,alpha_arg,m_arg):
     fac1 = w_wave_arg*w_wave_arg*kz_arg*kz_arg

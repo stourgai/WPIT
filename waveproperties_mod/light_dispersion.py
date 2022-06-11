@@ -10,6 +10,17 @@ from environment_mod import const
 
 import numpy as np
 
+#####waveproperties_mod.light_dispersion##############################
+
+#Description:Dispersion relation of light
+#Inputs:
+# w: wave frequency
+# wpe: electron plasma frequency
+#Outputs:
+# nsq_tmp: squared refractive index
+# kappa_tmp: wave number
+#####################################################################
+
 def light_dispersion(w,wpe,wce):
     nsq_tmp=(w*w-wpe*wpe)/(w*w)
 

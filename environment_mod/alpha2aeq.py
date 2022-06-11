@@ -9,7 +9,7 @@ from environment_mod.Bmag_dipole import Bmag_dipole
 #lambda_arg: magnetic latitude in rad
 #alpha_arg: equatorial pitch angle in rad
 #Outputs:
-#alphaeq0*: local pitch angle in rad
+#alphaeq0: local pitch angle in rad
 
 #############################################################################
 

@@ -3,13 +3,13 @@ from environment_mod import const
 
 #####environment_mod.bounce_period###############################################
 
-#Description:**Calculate the bounce period of a trapped particle**
+#Description:Calculate the bounce period of a trapped particle
 #Inputs:
-# **L_arg**: L shell
-# **v_arg**: particle velocity in m/s
-# **aeq_arg**: equatorial pitch angle
+# L_arg: L shell
+# v_arg: particle velocity in m/s
+# aeq_arg: equatorial pitch angle
 #Outputs:
-# **tmp**: Bounce period in s
+# tmp: Bounce period in s
 
 #################################################################################
 

@@ -1,4 +1,19 @@
 import numpy as np
+
+#####environment_mod.larmor############################################
+
+#Description:Calculate the equatorial electron density according to Carpender and Anderson [1992] model
+#Inputs:
+# Lsh: L shell
+# Kpmax: the maximum Kp value in the preceding 24 hours
+# day: the day number
+# mlt: the magnetic local time
+# Rb: the 13-month average sunspot number
+#Outputs:
+# ne_eq: equatorial electron density in cm^-3
+
+#############################################################################
+
 def L_pp(Kpmax):
     tmp=5.6-0.46*Kpmax
     return tmp

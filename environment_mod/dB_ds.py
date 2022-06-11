@@ -1,5 +1,18 @@
 import numpy as np
 from environment_mod import const
+
+#####environment_mod.dB_ds############################################
+
+#Description:Routine to calculate the gradient of magnetic field strength with respect to the distance along the magnetic field line
+#Inputs:
+# B_arg: magnetic field in T
+# lamda_arg: magnetic latitude in rad
+# L_arg: L shell
+#Outputs:
+# dB_ds_arg: gradient of magnetic field along the field line
+
+#############################################################################
+
 def dB_ds(B_arg,lamda_arg,L_arg):
 
     slat = np.sin(lamda_arg)

@@ -1,10 +1,19 @@
 import numpy as np
+
+#####environment_mod.Bmag_dipole###############################################
+
+#Description:**Routine to calculate the geomagnetic dipole field strength**
+#Inputs:
+# **L_arg**: L shell
+# **lamda_arg**: magnetic latitude in rad
+#Outputs:
+# **Bmag**: Geomagnetic field in T
+
+#############################################################################
+
 def Bmag_dipole(L_arg,lamda_arg):
     
-    #----calculate the dipole magnetic field strength
-    #L_arg geomagnetic L shell
-    #lamda_arg geomagnetic latitude in rad
-    
+   
     B0=31200*10**(-9)
     slat=np.sin(lamda_arg)
     clat=np.cos(lamda_arg)

@@ -4,9 +4,9 @@ import numpy as np
 
 #Description:Routine to calculate the loss cone angle
 #Inputs:
-# **L_arg**: L shell
+# L_arg: L shell
 #Outputs:
-# **tmp**: loss cone angle in rad
+# tmp: loss cone angle in rad
 
 #############################################################################
 

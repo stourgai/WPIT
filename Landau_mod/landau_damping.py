@@ -123,9 +123,9 @@ def landau_damping(ray_file,distr):
 
             dist=np.sqrt(posx**2+posy**2+posz**2)
             kis[ii]=ki_along_vg
-            magnitude[ii]=magnitude[ii-1]*np.exp(-dist*ki) #ST changed ki_along_vg to ki
-            if magnitude[ii]<0.01:
-                break
+            magnitude[ii]=magnitude[ii-1]*np.exp(-dist*ki) 
+            # if magnitude[ii]<0.01:
+            #     break
         else:
             print('Re[n]=0, not solving evanescent mode')
     print(kis[1],magnitude[0],magnitude[2])
@@ -135,21 +135,21 @@ def landau_damping(ray_file,distr):
     print ("Finished with Landau damping")
 
 
-    mag_zero=np.where(magnitude == 0)
+    # mag_zero=np.where(magnitude == 0)
 
-    print(mag_zero[0][0])
+    # print(mag_zero[0][0])
 
     
     fig2, ax2 = plt.subplots(figsize=(9,10))
     # ax2=fig2.add_subplot(111)
 
     ax2.set_ylim(0,1)
-    ax2.set_xlim(0,t[mag_zero[0][0]])
+    # ax2.set_xlim(0,t[mag_zero[0][0]])
 
     ax2.set_xlabel('Time [sec]')
     ax2.set_ylabel('Normalised Wave Power')
 
-    ax2.plot(t[0:mag_zero[0][0]],magnitude[0:mag_zero[0][0]],c='tab:green', alpha=0.75)
+    ax2.plot(t,magnitude,c='tab:green', alpha=0.75)
     plt.grid()
     plt.show()
 
@@ -157,15 +157,12 @@ def landau_damping(ray_file,distr):
 
 
 
-    data={'time':ray_in.time[0:mag_zero[0][0]],'damp':magnitude[0:mag_zero[0][0]]}    
+    data={'time':ray_in.time,'damp':magnitude}    
     df = pd.DataFrame(data)
 
 
-    path_csv='example_rays/Landau_output/'
-    # Create directory for inputs/outputs if doesn't already exist
-    if not os.path.exists(path_csv):
-        os.makedirs(path_csv)
 
-    df.to_csv(path_csv+'damping.csv',sep=',',index=False)
     
- 
+    df.to_csv(ray_file+'_damping.csv',sep=',',index=False)
+
+    print('Saved file as:', ray_file+'_damping.csv')

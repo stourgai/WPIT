@@ -37,7 +37,5 @@ def fG2(f, vperp, vpar, kperp, kpar, w, m, wch):
 
     Jm=np.real(scp.jv(m,kperp*vperp/wch))
 
-    # Should this be -(m*wch) or +(m*wch)???
-    # G2 = Jm*(df_dvpar-(m*wch+eps)/(w*vperp+eps)*(vpar*df_dvperp - vperp*df_dvpar))
     G2 = Jm*(df_dvpar-(m*wch+eps)/(w*vperp+eps)*(vpar*df_dvperp - vperp*df_dvpar))
     return G2

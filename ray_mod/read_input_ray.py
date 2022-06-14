@@ -4,45 +4,45 @@ import numpy as np
 def read_input_ray(ray_file_name):
 
 
-    ray_in=pd.read_csv(ray_file_name,delim_whitespace=True, header=None)
-    ray_in.columns=['ray','ray_stop','time','posx','posy','posz','vprelx','vprely','vprelz',
+    ray_=pd.read_csv(ray_file_name,delim_whitespace=True, header=None)
+    ray_.columns=['ray','ray_stop','time','posx','posy','posz','vprelx','vprely','vprelz',
                     'vgrelx','vgrely','vgrelz','nx','ny','nz','Bx','By','Bz','w','Nspec','qs1','qs2', 'qs3',
                     'qs4', 'ms1','ms2','ms3','ms4','Ns1','Ns2','Ns3','Ns4','nus1','nus2','nus3','nus4' ]
 
-    timef=ray_in.time
-    posxf=ray_in.posx
-    posyf=ray_in.posy
-    poszf=ray_in.posz
-    vprelxf=ray_in.vprelx
-    vprelyf=ray_in.vprely
-    vprelzf=ray_in.vprelz
-    vgrelxf=ray_in.vgrelx
-    vgrelyf=ray_in.vgrely
-    vgrelzf=ray_in.vgrelz
-    nxf=ray_in.nx
-    nyf=ray_in.ny
-    nzf=ray_in.nz
-    Bxf=ray_in.Bx
-    Byf=ray_in.By
-    Bzf=ray_in.Bz
-    wf=ray_in.w
-    Nspecf=ray_in.Nspec
-    qs1f=ray_in.qs1
-    qs2f=ray_in.qs2
-    qs3f=ray_in.qs3
-    qs4f=ray_in.qs4
-    ms1f=ray_in.ms1
-    ms2f=ray_in.ms2
-    ms3f=ray_in.ms3
-    ms4f=ray_in.ms4
-    Ns1f=ray_in.Ns1
-    Ns2f=ray_in.Ns2
-    Ns3f=ray_in.Ns3
-    Ns4f=ray_in.Ns4
-    nus1f=ray_in.nus1
-    nus2f=ray_in.nus2
-    nus3f=ray_in.nus3
-    nus4f=ray_in.nus4
+    timef=ray_.time
+    posxf=ray_.posx
+    posyf=ray_.posy
+    poszf=ray_.posz
+    vprelxf=ray_.vprelx
+    vprelyf=ray_.vprely
+    vprelzf=ray_.vprelz
+    vgrelxf=ray_.vgrelx
+    vgrelyf=ray_.vgrely
+    vgrelzf=ray_.vgrelz
+    nxf=ray_.nx
+    nyf=ray_.ny
+    nzf=ray_.nz
+    Bxf=ray_.Bx
+    Byf=ray_.By
+    Bzf=ray_.Bz
+    wf=ray_.w
+    Nspecf=ray_.Nspec
+    qs1f=ray_.qs1
+    qs2f=ray_.qs2
+    qs3f=ray_.qs3
+    qs4f=ray_.qs4
+    ms1f=ray_.ms1
+    ms2f=ray_.ms2
+    ms3f=ray_.ms3
+    ms4f=ray_.ms4
+    Ns1f=ray_.Ns1
+    Ns2f=ray_.Ns2
+    Ns3f=ray_.Ns3
+    Ns4f=ray_.Ns4
+    nus1f=ray_.nus1
+    nus2f=ray_.nus2
+    nus3f=ray_.nus3
+    nus4f=ray_.nus4
 
     freq=wf/(2*np.pi)
 

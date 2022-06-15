@@ -130,4 +130,4 @@ def warm_refractive_index(K_e,K_H,K_He,K_O,psi_arg,Te,Ti,K110,K220,K330,K120,w_w
     kappa_per=kappa*np.sin(psi_arg)
     
     
-    return ref_ind,kappa,kappa_par,kappa_per,Bwarm,Cwarm
+    return ref_ind,kappa,kappa_par,kappa_per

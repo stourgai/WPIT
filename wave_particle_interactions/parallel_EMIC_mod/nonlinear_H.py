@@ -3,6 +3,24 @@ from scipy.special import jn
 
 from environment_mod import const
 
+#####parallel_EMIC.nonlinear_H###############################################
+
+#Inputs:
+# pper_arg: perpendicular to the geomagnetic field momentum
+# ppar_arg:parallel to the geomagnetic field momentum
+# kappa_arg: parallel to the geomagnetic field wave number
+# gamma_arg: Lorentz factor
+# m_arg: particle mass
+# wce_arg: electron gyrofrequency
+# dkp_dt_arg: time derivative of the parallel compoment of the wave number
+# dwcdz_arg: spatial derivative of the gyrofrequency along the field line
+# dwdt_arg:time derivative of the wave frequency
+
+#Outputs:
+# tmp: H
+
+#############################################################################
+
 def nonlinear_H(pper_arg,ppar_arg,kappa_arg,gamma_arg,m_arg,wce_arg,dk_dt_arg,dwcdz_arg,dwdt_arg):
     dwc_dt=(ppar_arg/(gamma_arg*m_arg))*dwcdz_arg
     fac1=-(1/gamma_arg)*dwc_dt

@@ -1,7 +1,15 @@
 import numpy as np
-from scipy.special import jn 
 
-from environment_mod import const
+#####parallel_EMIC.nonlinear_S###############################################
+
+#Inputs:
+# H: non linear parameter H
+# wtsq: trapping frequency squared
+
+#Outputs:
+# tmp: s
+
+#############################################################################
 
 def nonlinear_S(H_arg,wtsq_arg):
     tmp=H_arg/wtsq_arg

@@ -47,12 +47,18 @@ def warm_stix_parameters(S_cold,D_cold,P_cold,Te,Ti,mu_warm,Ke,KH,KHe,KO):
     K12e=Ke[1]
     K33e=Ke[8]
     K11H=KH[0]
+    K12H=KH[1]
+    K33H=KH[8]
     K11He=KHe[0]
+    K12He=KHe[1]
+    K33He=KHe[8]
     K11O=KO[0]
+    K12O=KO[1]
+    K33O=KO[8]
     
     S_warm=S_cold+taue*K11e+tauH*K11H+tauHe*K11He+tauO*K11O
-    D_warm=D_cold+taue*K12e+tauH*K11H+tauHe*K11He+tauO*K11O
-    P_warm=P_cold+taue*K33e+tauH*K11H+tauHe*K11He+tauO*K11O
+    D_warm=D_cold+taue*K12e+tauH*K12H+tauHe*K12He+tauO*K12O
+    P_warm=P_cold+taue*K33e+tauH*K33H+tauHe*K33He+tauO*K33O
     R_warm=S_warm+D_warm
     L_warm=S_warm-D_warm
     

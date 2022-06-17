@@ -1,0 +1,1064 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>WPIT.LandauDamp_mod.ray_plots API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>WPIT.LandauDamp_mod.ray_plots</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python"> 
+import numpy as np
+import datetime as dt
+import matplotlib.pyplot as plt
+from spacepy import coordinates as coord
+from spacepy.time import Ticktock
+
+
+import WPIT.Environment_mod as env
+from WPIT.LandauDamp_mod.RayUtils_mod import read_appended_ray
+
+def ray_plots(ray_file_name):
+
+    df=read_appended_ray(ray_file_name)
+
+    time=df.time
+    posx=df.posx
+    posy=df.posy
+    posz=df.posz
+    vprelx=df.vprelx
+    vprely=df.vprely
+    vprelz=df.vprelz
+    vgrelx=df.vgrelx
+    vgrely=df.vgrely
+    vgrelz=df.vgrelz
+    nx=df.nx
+    ny=df.ny
+    nz=df.nz
+    Bx=df.Bx
+    By=df.By
+    Bz=df.Bz
+    w=df.w
+    Ne=df.Ne
+    NH=df.NH
+    NHe=df.NHe
+    NO=df.NO
+    psi=df.psi
+    theta_res=df.theta_res
+    gendrin=df.gendrin
+    Y=df.Y
+    L=df.L
+    alt=df.alt
+    lat=df.lat
+    lon=df.lon
+    damp=df.damp
+    S_stix=df.S_stix
+    D_stix=df.D_stix
+    P_stix=df.P_stix
+    R_stix=df.R_stix
+    L_stix=df.L_stix
+    S_stix=df.S_stix
+    wce=df.wce
+    wcH=df.wcH
+    wcHe=df.wcHe
+    wcO=df.wcO
+    wpe=df.wpe
+    wpH=df.wpH
+    wpHe=df.wpHe
+    wpO=df.wpO
+    wlhr=df.wlhr
+    wuhr=df.wuhr
+
+    ref_ind=np.sqrt(nx*nx+ny*ny+nz*nz)
+    kpar=w*nz/env.const.c_light
+
+    t_new=np.arange(0,max(time),0.0001)
+    lat_int=np.interp(t_new,time,lat)
+    L_int=np.interp(t_new,time,L)
+    mag_int=np.interp(t_new,time,damp)
+
+    time_new=[]
+    lat_new=[]
+    L_new=[]
+    mag_new=[]
+    time_new.append(t_new[0])
+    lat_new.append(lat_int[0])
+    L_new.append(L_int[0])
+    mag_new.append(mag_int[0])
+    for i in range(1,len(t_new)-1):
+        if lat_int[i]&gt;0.0 and lat_int[i+1]&lt;0.0 or lat_int[i]&lt;0.0 and lat_int[i+1]&gt;0.0 :
+            time_new.append(t_new[i])
+            lat_new.append(lat_int[i])
+            L_new.append(L_int[i])
+            mag_new.append(mag_int[i])
+
+#Figure parameters
+    fig_width_pt = 650.0  # Get this from LaTeX using \showthe\columnwidth
+    inches_per_pt = 1.0/72.27               # Convert pt to inch
+    golden_mean = (np.sqrt(5)-1.0)/2.0         # Aesthetic ratio
+    fig_width = 6  # width in inches
+    fig_height = 6      # height in inches
+    fig_size =  [fig_width+1,fig_height+1]
+    params = {&#39;backend&#39;: &#39;ps&#39;,
+              &#39;axes.labelsize&#39;: 14,
+              &#39;font.size&#39;: 14,
+              &#39;legend.fontsize&#39;: 14,
+              &#39;xtick.labelsize&#39;: 14,
+              &#39;ytick.labelsize&#39;: 14,
+              &#39;text.usetex&#39;: False,
+              &#39;figure.figsize&#39;: fig_size}
+    plt.rcParams.update(params)
+
+    fig, ax1 = plt.subplots()
+
+    color = &#39;tab:red&#39;
+    ax1.set_xlabel(&#39;time (s)&#39;)
+    ax1.set_ylabel(&#39;w &#39;, color=color)
+    ax1.plot(time,wlhr, color=color,label=&#39;$\omega_{LHR}$&#39;)
+    ax1.plot(time,w, color=&#34;tab:pink&#34;,label=&#39;$\omega_{wave}$&#39;)
+    ax1.tick_params(axis=&#39;y&#39;, labelcolor=color)
+    ax1.set_xlim(0,np.max(time))
+    ax1.grid(alpha=.3)
+    ax1.legend()
+    ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
+    color = &#39;tab:blue&#39;
+    ax2.set_ylabel(&#39;lat(deg)&#39;, color=color)  # we already handled the x-label with ax1
+    ax2.plot(time,lat, color=color)
+    ax2.tick_params(axis=&#39;y&#39;, labelcolor=color)
+    fig.tight_layout()  # otherwise the right y-label is slightly clipped
+    # ax2.axhline(y=0,color=&#34;black&#34;, linestyle=&#34;--&#34;)
+    ax1.legend()
+
+    #----Power Plot------#
+    fig2 = plt.figure()
+    ax2=fig2.add_subplot(111)
+
+    ax2.set_ylim(0,1)
+    ax2.set_xlim(0,np.max(time))
+
+    ax2.set_xlabel(&#39;Time [sec]&#39;)
+    ax2.set_ylabel(&#39;Normalised Wave Power&#39;)
+
+    ax2.plot(time,damp,c=&#39;tab:blue&#39;, alpha=0.75)
+    plt.grid(axis=&#39;both&#39;, alpha=.3)
+    plt.show()
+
+    #----L Plot------#
+    fig2 = plt.figure()
+    ax2=fig2.add_subplot(111)
+
+    # ax2.set_ylim(0,1)
+    ax2.set_xlim(0,np.max(time))
+
+    ax2.set_xlabel(&#39;Time [sec]&#39;)
+    ax2.set_ylabel(&#39;L Shell&#39;)
+
+    ax2.plot(time,L,c=&#39;tab:green&#39;, alpha=0.75)
+    plt.grid(axis=&#39;both&#39;, alpha=.3)
+    plt.show()
+
+    #----Lat Plot------#
+    fig2 = plt.figure()
+    ax2=fig2.add_subplot(111)
+
+    # ax2.set_ylim(0,1)
+    ax2.set_xlim(0,np.max(time))
+
+    ax2.set_xlabel(&#39;Time [sec]&#39;)
+    ax2.set_ylabel(&#39;Latitude [deg]&#39;)
+
+    ax2.plot(time,lat,c=&#39;tab:orange&#39;, alpha=0.75)
+    plt.grid(axis=&#39;both&#39;, alpha=.3)
+    plt.show()
+
+    #----Psi Plot------#
+    fig2 = plt.figure()
+    ax2=fig2.add_subplot(111)
+
+    # ax2.set_ylim(0,1)
+    ax2.set_xlim(0,np.max(time))
+
+    ax2.set_xlabel(&#39;Time [sec]&#39;)
+    ax2.set_ylabel(&#39;$\psi$ [deg]&#39;)
+
+    ax2.plot(time,psi,c=&#39;tab:green&#39;, alpha=0.75)
+    plt.grid(axis=&#39;both&#39;, alpha=.3)
+    plt.show()    
+
+    #----Ref Plot------#
+    fig2 = plt.figure()
+    ax2=fig2.add_subplot(111)
+
+    # ax2.set_ylim(0,1)
+    ax2.set_xlim(0,np.max(time))
+
+    ax2.set_xlabel(&#39;Time [sec]&#39;)
+    ax2.set_ylabel(&#39;Refractive Index&#39;)
+
+    ax2.plot(time,ref_ind,c=&#39;tab:red&#39;, alpha=0.75)
+    plt.grid(axis=&#39;both&#39;, alpha=.3)    
+
+    #------Combined L-lat---#
+    fig5 = plt.figure()
+    ax=fig5.add_subplot(111)
+    ax.set_xlabel(&#34;Time [s]&#34;,fontsize=14)
+    ax.set_ylabel(&#34;L-shell&#34;,color=&#39;tab:green&#39;,fontsize=14)
+    ax.plot(time,L,color=&#39;tab:green&#39;)
+    ax.grid(alpha=.3)
+    ax.set_xlim(0,np.max(time))
+    ax2=ax.twinx()
+    # ax2.set_ylim(-20,20)
+    ax2.plot(time,lat,color=&#39;tab:blue&#39;)
+    ax2.set_ylabel(&#34;Latitude [deg]&#34;,color=&#39;tab:blue&#39;,fontsize=14)
+
+    plt.show()
+
+    #------Combined L-lat---#
+    fig5 = plt.figure()
+    ax=fig5.add_subplot(111)
+    ax.set_xlabel(&#34;Time [s]&#34;,fontsize=14)
+    ax.set_ylabel(&#34;Wave normal angle (deg)&#34;,color=&#39;tab:green&#39;,fontsize=14)
+    ax.plot(time,psi,color=&#39;tab:green&#39;)
+    ax.grid(alpha=.3)
+    ax.set_xlim(0,np.max(time))
+    ax2=ax.twinx()
+    # ax2.set_ylim(-20,20)
+    ax2.plot(time,lat,c=&#39;tab:red&#39;)
+    ax2.set_ylabel(&#34;Latitude [deg]&#34;,c=&#39;tab:red&#39;,fontsize=14)
+
+    plt.show()    
+
+        #----------------Plot Ray path-----------
+
+    
+    D2R = (np.pi/180.0)
+    R_E = 6371e3
+    H_IONO=1000e3
+
+    psize = 8                     # plot size in earth radii
+    # L_shells = [1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9,2,2.1,2.2,2.3,2.4,2.5,2.6,2.7,3, 4, 5, 6]    # Field lines to draw
+    L_shells = [2,3, 4, 5, 6]
+    fig, ax = plt.subplots(1,3)
+
+    flashtime = dt.datetime(2010,1,1,0,0,0)
+    tmp_coords = coord.Coords(list(zip(posx, posy, posz)),&#39;SM&#39;,&#39;car&#39;,units=[&#39;m&#39;,&#39;m&#39;,&#39;m&#39;])
+    tvec_datetime = [flashtime + dt.timedelta(seconds=s) for s in time]
+    tmp_coords.ticks = Ticktock(tvec_datetime)
+    tmp_coords2=tmp_coords.convert(&#39;SM&#39;,&#39;sph&#39;)
+    tmp_coords = tmp_coords.convert(&#39;MAG&#39;,&#39;car&#39;)
+    # print(tmp_coords[0])
+    # print(tmp_coords2[0])
+
+    ref_indexs=coord.Coords(list(zip(nx, ny, nz)),&#39;SM&#39;,&#39;car&#39;)
+    tvec_datetime2 = [flashtime + dt.timedelta(seconds=s) for s in time]
+    ref_indexs.ticks = Ticktock(tvec_datetime2)
+    ref_indexs2=ref_indexs.convert(&#39;SM&#39;,&#39;sph&#39;)
+    ref_indexs=ref_indexs.convert(&#39;MAG&#39;,&#39;car&#39;)
+
+    mag_field=coord.Coords(list(zip(Bx, By, Bz)),&#39;SM&#39;,&#39;car&#39;)
+    tvec_datetime3 = [flashtime + dt.timedelta(seconds=s) for s in time]
+    mag_field.ticks = Ticktock(tvec_datetime3)
+    mag_field=mag_field.convert(&#39;MAG&#39;,&#39;car&#39;)
+
+    # print(tmp_coords[0])
+    # print(ref_indexs[0])
+    # print(mag_field[0])
+
+
+
+
+    posx=tmp_coords.x
+    posy=tmp_coords.y
+    posz=tmp_coords.z
+    nx=ref_indexs.x
+    ny=ref_indexs.y
+    nz=ref_indexs.z
+    Bx=mag_field.x
+    Bz=mag_field.y
+    By=mag_field.z
+
+
+    # print(np.shape(tmp_coords))
+    # Plot the earth
+    for i in [0, 1, 2]:
+        earth = plt.Circle((0,0),1,color=&#39;0.5&#39;,alpha=1, zorder=100)
+        iono  = plt.Circle((0,0),(R_E + H_IONO)/R_E, color=&#39;c&#39;,alpha=0.5, zorder=99)
+        ax[i].add_patch(earth)   
+        ax[i].add_patch(iono)
+        tmp_coords.sim_time = time
+
+    # Plot the fieldlines (dipole model; could use something more complex)
+    for Lf in L_shells:
+        # Plot dipole field lines for both profile views
+        lam = np.linspace(-80,80,181)
+        L_r = Lf*pow(np.cos(lam*D2R),2)
+        Lx  = L_r*np.cos(lam*D2R)
+        Ly  = L_r*np.sin(lam*D2R)
+        ax[1].plot(Lx,Ly,color=&#39;r&#39;,linewidth=1,linestyle=&#39;dashed&#39;)   # Field line
+        ax[2].plot(Lx,Ly,color=&#39;r&#39;,linewidth=1,linestyle=&#39;dashed&#39;)   # Field line
+        ax[2].plot(-Lx,Ly,color=&#39;r&#39;,linewidth=1,linestyle=&#39;dashed&#39;)  # Field line (other side)
+
+        # Plot equatorial extent for the top-down view
+        lam = np.linspace(-180,180,181)
+        Lx2  = Lf*np.cos(lam*D2R)
+        Ly2  = Lf*np.sin(lam*D2R)
+        ax[0].plot(Lx2,Ly2,color=&#39;r&#39;,linewidth=1,linestyle=&#39;dashed&#39;)
+
+    lw=2
+
+    for i in range(0,360,10):
+        tmp=i*np.pi/180
+        qx=[np.cos(tmp),6*np.cos(tmp)]
+        qy=[np.sin(tmp),6*np.sin(tmp)]
+        #print(qx,qy)
+        ax[2].plot(qx,qy,&#39;g--&#39;,linewidth=0.5)
+        ax[1].plot(qx,qy,&#39;g--&#39;,linewidth=0.5)
+
+    nmagxz=np.sqrt(nx**2+nz**2)
+    nmagyz=np.sqrt(ny**2+nz**2)
+    nmag=np.sqrt(nx**2+ny**2+nz**2)
+    Bmagxz=np.sqrt(Bx**2+Bz**2)
+    Bmagyz=np.sqrt(By**2+Bz**2)
+    Bmag=np.sqrt(Bx**2+By**2+Bz**2)
+    # ax[0].plot(posx/R_E, posy/R_E, linewidth=lw)
+    ax[0].plot(posx/R_E, posy/R_E, linewidth=lw)
+    if posy[0] &lt; 0:
+        ax[1].plot(posx/R_E, posz/R_E, linewidth=lw, zorder=101)
+        for kk in range(0,len(posx),5):
+            ax[1].quiver( posx[kk]/R_E,  posz[kk]/R_E, nx[kk]/nmagxz[kk], nz[kk]/nmagxz[kk], scale=25.,
+            width=0.003, headwidth=2., headlength=3.)
+            ax[2].quiver( posy[kk]/R_E,  posz[kk]/R_E, ny[kk]/nmagyz[kk], nz[kk]/nmagyz[kk], scale=25.,
+            width=0.003, headwidth=2., headlength=3.)
+    else:
+        ax[1].plot(posx/R_E, posz/R_E, linewidth=lw, zorder=10)
+        for kk in range(0,len(posx),5):
+            ax[1].quiver(posx[kk]/R_E,  posz[kk]/R_E, nx[kk]/nmagxz[kk], nz[kk]/nmagxz[kk], scale=25.,
+            width=0.003, headwidth=2., headlength=3.)
+            # ax[1].quiver(posx[kk]/R_E,  posz[kk]/R_E, Bx[kk]/Bmagxz[kk], Bz[kk]/Bmagxz[kk], scale=25.,
+            # width=0.003, headwidth=2., headlength=3., color=&#39;r&#39;)
+            ax[2].quiver( posy[kk]/R_E,  posz[kk]/R_E, ny[kk]/nmagyz[kk], nz[kk]/nmagyz[kk], scale=25.,
+            width=0.003, headwidth=2., headlength=3.)
+            # ax[2].quiver( posy[kk]/R_E,  posz[kk]/R_E, By[kk]/Bmagyz[kk], Bz[kk]/Bmagyz[kk], scale=25.,
+            # width=0.003, headwidth=2., headlength=3., color=&#39;r&#39;)
+    if  posx[0] &gt; 0:
+        ax[2].plot(posy/R_E, posz/R_E, linewidth=lw, zorder=101)
+    else:
+        ax[2].plot(posy/R_E, posz/R_E, linewidth=lw, zorder=10)
+
+    ax[0].set_title(&#39;XY&#39;)
+    ax[1].set_title(&#39;XZ&#39;)
+    ax[2].set_title(&#39;YZ&#39;)
+    ax[1].set_yticks([])
+    ax[2].set_yticks([])
+
+    ax[1].set_xlabel(&#39;L (R$_E$)&#39;)
+    ax[0].set_ylabel(&#39;L (R$_E$)&#39;)
+
+    ax[0].set_xlim([-psize, psize])
+    ax[0].set_ylim([-psize, psize])
+    ax[1].set_xlim([0, psize])
+    ax[1].set_ylim([-psize/2, psize/2])
+    ax[2].set_xlim([-psize, psize])
+    ax[2].set_ylim([-psize, psize])
+
+    ax[0].set_aspect(&#39;equal&#39;)
+    ax[1].set_aspect(&#39;equal&#39;)
+    ax[2].set_aspect(&#39;equal&#39;)
+    
+    plt.show()
+
+    #-------------4x4 plot---------------------------------
+    fig, axs = plt.subplots(2, 2)
+
+    earth = plt.Circle((0,0),1,color=&#39;0.5&#39;,alpha=1, zorder=100)
+    iono  = plt.Circle((0,0),(R_E + H_IONO)/R_E, color=&#39;c&#39;,alpha=0.5, zorder=99)
+    axs[0,0].add_patch(earth)   
+    axs[0,0].add_patch(iono)
+    axs[0,0].set_xlim([-psize, psize])
+    axs[0,0].set_ylim([-psize, psize])
+
+    for Lf in L_shells:
+        # Plot dipole field lines for both profile views
+        lam = np.linspace(-80,80,181)
+        L_r = Lf*pow(np.cos(lam*D2R),2)
+        Lx  = L_r*np.cos(lam*D2R)
+        Ly  = L_r*np.sin(lam*D2R)
+        axs[0,0].plot(Lx,Ly,color=&#39;r&#39;,linewidth=1,linestyle=&#39;dashed&#39;)   # Field line
+        axs[0,0].plot(-Lx,Ly,color=&#39;r&#39;,linewidth=1,linestyle=&#39;dashed&#39;)
+    for i in range(0,360,10):
+        tmp=i*np.pi/180
+        qx=[np.cos(tmp),6*np.cos(tmp)]
+        qy=[np.sin(tmp),6*np.sin(tmp)]
+        #print(qx,qy)
+        axs[0,0].plot(qx,qy,&#39;g--&#39;,linewidth=0.5)
+
+    if posy[0] &lt; 0:
+        sc=axs[0,0].scatter(posx/R_E, posz/R_E, s=4, c=damp, cmap=&#39;jet&#39;, zorder=101, edgecolor=&#39;none&#39;)
+
+
+        for kk in range(0,len(posx),5):
+            axs[0,0].quiver( posx[kk]/R_E,  posz[kk]/R_E, nx[kk]/nmagxz[kk], nz[kk]/nmagxz[kk], scale=25.,
+            width=0.003, headwidth=2., headlength=3.)
+    else:
+        sc=axs[0,0].scatter(posx/R_E, posz/R_E,s=4, c=damp, cmap=&#39;jet&#39;,  zorder=10, edgecolor=&#39;none&#39;)
+        for kk in range(0,len(posx),5):
+            axs[0,0].quiver(posx[kk]/R_E,  posz[kk]/R_E, nx[kk]/nmagxz[kk], nz[kk]/nmagxz[kk], scale=25.,
+            width=0.003, headwidth=2., headlength=3.)
+
+    axs[0,0].scatter(posx[0]/R_E, posz[0]/R_E, s=60, c=&#39;yellow&#39;, zorder=101,edgecolor=&#39;black&#39;)
+    plt.colorbar(sc,ax=axs[0,0])
+    # plt.text(0.5, 0.5, &#39;matplotlib&#39;, horizontalalignment=&#39;center&#39;, verticalalignment=&#39;center&#39;, transform=ax.transAxes)
+    axs[0,1].set_ylim(0,1)
+    axs[0,1].set_xlim(0,np.max(time))
+
+    axs[0,1].set_xlabel(&#39;Time [sec]&#39;)
+    axs[0,1].set_ylabel(&#39;Normalised Wave Power&#39;)
+
+    axs[1,1].set_xlabel(&#39;L-Shell&#39;)
+    axs[1,1].set_ylabel(&#39;Enhancment Factor&#39;)
+
+    axs[0,0].set_xlabel(&#39;L-shell&#39;)
+    axs[0,0].set_ylabel(&#39;L-shell&#39;)
+
+    axs[0,1].plot(time,damp,c=&#39;tab:green&#39;, alpha=0.75)
+    axs[0,1].grid(axis=&#39;both&#39;, alpha=.3)
+
+
+    axs[1,0].set_xlabel(&#34;Time [s]&#34;,fontsize=14)
+    axs[1,0].set_ylabel(&#34;L-shell&#34;,color=&#39;tab:green&#39;,fontsize=14)
+    axs[1,0].plot(time,L,color=&#39;tab:green&#39;)
+    axs[1,0].grid(alpha=.3)
+    axs[1,0].set_xlim(0,np.max(time))
+    ax2=axs[1,0].twinx()
+    ax2.plot(time,lat,color=&#39;tab:red&#39;)
+    ax2.set_ylabel(&#34;Latitude [deg]&#34;,color=&#39;tab:red&#39;,fontsize=14)
+
+
+    bins=np.arange(0.05,4.05,0.1)
+
+    axs[1,1].hist(L_new,bins=bins,range=[0,4],density=True,weights=mag_new,color=&#39;tab:green&#39;)
+    axs[1,1].grid()
+
+
+
+    axs[0,0].set_xlim([0, psize-2])
+    axs[0,0].set_ylim([-(psize-2)/2, (psize-2)/2])
+
+    # axs[0,0].set_aspect(&#39;equal&#39;)
+    # axs[0,1].set_aspect(&#39;equal&#39;)
+    # axs[1,0].set_aspect(&#39;equal&#39;)
+    # axs[1,1].set_aspect(&#39;equal&#39;)
+    plt.tight_layout()
+    plt.show()
+
+    fig, axs = plt.subplots()
+
+    earth = plt.Circle((0,0),1,color=&#39;0.5&#39;,alpha=1, zorder=100)
+    iono  = plt.Circle((0,0),(R_E + H_IONO)/R_E, color=&#39;c&#39;,alpha=0.5, zorder=99)
+    axs.add_patch(earth)   
+    axs.add_patch(iono)
+    axs.set_xlim([-psize, psize])
+    axs.set_ylim([-psize, psize])
+
+    for Lf in L_shells:
+        # Plot dipole field lines for both profile views
+        lam = np.linspace(-80,80,181)
+        L_r = Lf*pow(np.cos(lam*D2R),2)
+        Lx  = L_r*np.cos(lam*D2R)
+        Ly  = L_r*np.sin(lam*D2R)
+        axs.plot(Lx,Ly,color=&#39;r&#39;,linewidth=1,linestyle=&#39;dashed&#39;)   # Field line
+        axs.plot(-Lx,Ly,color=&#39;r&#39;,linewidth=1,linestyle=&#39;dashed&#39;)
+    for i in range(0,360,10):
+        tmp=i*np.pi/180
+        qx=[np.cos(tmp),6*np.cos(tmp)]
+        qy=[np.sin(tmp),6*np.sin(tmp)]
+        #print(qx,qy)
+        axs.plot(qx,qy,&#39;g--&#39;,linewidth=0.5)
+
+    if posy[0] &lt; 0:
+        sc=axs.scatter(posx/R_E, posz/R_E, s=4, c=damp, cmap=&#39;jet&#39;, zorder=101, edgecolor=&#39;none&#39;)
+
+
+        for kk in range(0,len(posx),20):
+            axs.quiver( posx[0]/R_E,  posz[0]/R_E, nx[0]/nmagxz[0], nz[0]/nmagxz[0], scale=15.,
+            width=0.003, headwidth=2., headlength=3.)
+    else:
+        sc=axs.scatter(posx/R_E, posz/R_E,s=4, c=damp, cmap=&#39;jet&#39;,  zorder=10, edgecolor=&#39;none&#39;)
+        for kk in range(0,len(posx),20):
+            axs.quiver(posx[0]/R_E,  posz[0]/R_E, nx[0]/nmagxz[0], nz[0]/nmagxz[0], scale=15.,
+            width=0.003, headwidth=2., headlength=3.)
+
+    axs.scatter(posx[0]/R_E, posz[0]/R_E, s=60, c=&#39;yellow&#39;, zorder=101,edgecolor=&#39;black&#39;)
+    plt.colorbar(sc,ax=axs)
+    # plt.text(0.5, 0.5, &#39;matplotlib&#39;, horizontalalignment=&#39;center&#39;, verticalalignment=&#39;center&#39;, transform=ax.transAxes)
+
+
+    axs.set_xlabel(&#39;L-shell&#39;)
+    axs.set_ylabel(&#39;L-shell&#39;)
+
+#     axs.set_xlim([0, psize])
+#     axs.set_ylim([-(psize)/2, (psize)/2])
+    axs.set_xlim([1.9, 2.3])
+    axs.set_ylim([-0.5, 0.5])
+    # axs[0,0].set_aspect(&#39;equal&#39;)
+    # axs[0,1].set_aspect(&#39;equal&#39;)
+    # axs[1,0].set_aspect(&#39;equal&#39;)
+    # axs[1,1].set_aspect(&#39;equal&#39;)
+    plt.tight_layout()
+    plt.show()</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="WPIT.LandauDamp_mod.ray_plots.ray_plots"><code class="name flex">
+<span>def <span class="ident">ray_plots</span></span>(<span>ray_file_name)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def ray_plots(ray_file_name):
+
+    df=read_appended_ray(ray_file_name)
+
+    time=df.time
+    posx=df.posx
+    posy=df.posy
+    posz=df.posz
+    vprelx=df.vprelx
+    vprely=df.vprely
+    vprelz=df.vprelz
+    vgrelx=df.vgrelx
+    vgrely=df.vgrely
+    vgrelz=df.vgrelz
+    nx=df.nx
+    ny=df.ny
+    nz=df.nz
+    Bx=df.Bx
+    By=df.By
+    Bz=df.Bz
+    w=df.w
+    Ne=df.Ne
+    NH=df.NH
+    NHe=df.NHe
+    NO=df.NO
+    psi=df.psi
+    theta_res=df.theta_res
+    gendrin=df.gendrin
+    Y=df.Y
+    L=df.L
+    alt=df.alt
+    lat=df.lat
+    lon=df.lon
+    damp=df.damp
+    S_stix=df.S_stix
+    D_stix=df.D_stix
+    P_stix=df.P_stix
+    R_stix=df.R_stix
+    L_stix=df.L_stix
+    S_stix=df.S_stix
+    wce=df.wce
+    wcH=df.wcH
+    wcHe=df.wcHe
+    wcO=df.wcO
+    wpe=df.wpe
+    wpH=df.wpH
+    wpHe=df.wpHe
+    wpO=df.wpO
+    wlhr=df.wlhr
+    wuhr=df.wuhr
+
+    ref_ind=np.sqrt(nx*nx+ny*ny+nz*nz)
+    kpar=w*nz/env.const.c_light
+
+    t_new=np.arange(0,max(time),0.0001)
+    lat_int=np.interp(t_new,time,lat)
+    L_int=np.interp(t_new,time,L)
+    mag_int=np.interp(t_new,time,damp)
+
+    time_new=[]
+    lat_new=[]
+    L_new=[]
+    mag_new=[]
+    time_new.append(t_new[0])
+    lat_new.append(lat_int[0])
+    L_new.append(L_int[0])
+    mag_new.append(mag_int[0])
+    for i in range(1,len(t_new)-1):
+        if lat_int[i]&gt;0.0 and lat_int[i+1]&lt;0.0 or lat_int[i]&lt;0.0 and lat_int[i+1]&gt;0.0 :
+            time_new.append(t_new[i])
+            lat_new.append(lat_int[i])
+            L_new.append(L_int[i])
+            mag_new.append(mag_int[i])
+
+#Figure parameters
+    fig_width_pt = 650.0  # Get this from LaTeX using \showthe\columnwidth
+    inches_per_pt = 1.0/72.27               # Convert pt to inch
+    golden_mean = (np.sqrt(5)-1.0)/2.0         # Aesthetic ratio
+    fig_width = 6  # width in inches
+    fig_height = 6      # height in inches
+    fig_size =  [fig_width+1,fig_height+1]
+    params = {&#39;backend&#39;: &#39;ps&#39;,
+              &#39;axes.labelsize&#39;: 14,
+              &#39;font.size&#39;: 14,
+              &#39;legend.fontsize&#39;: 14,
+              &#39;xtick.labelsize&#39;: 14,
+              &#39;ytick.labelsize&#39;: 14,
+              &#39;text.usetex&#39;: False,
+              &#39;figure.figsize&#39;: fig_size}
+    plt.rcParams.update(params)
+
+    fig, ax1 = plt.subplots()
+
+    color = &#39;tab:red&#39;
+    ax1.set_xlabel(&#39;time (s)&#39;)
+    ax1.set_ylabel(&#39;w &#39;, color=color)
+    ax1.plot(time,wlhr, color=color,label=&#39;$\omega_{LHR}$&#39;)
+    ax1.plot(time,w, color=&#34;tab:pink&#34;,label=&#39;$\omega_{wave}$&#39;)
+    ax1.tick_params(axis=&#39;y&#39;, labelcolor=color)
+    ax1.set_xlim(0,np.max(time))
+    ax1.grid(alpha=.3)
+    ax1.legend()
+    ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
+    color = &#39;tab:blue&#39;
+    ax2.set_ylabel(&#39;lat(deg)&#39;, color=color)  # we already handled the x-label with ax1
+    ax2.plot(time,lat, color=color)
+    ax2.tick_params(axis=&#39;y&#39;, labelcolor=color)
+    fig.tight_layout()  # otherwise the right y-label is slightly clipped
+    # ax2.axhline(y=0,color=&#34;black&#34;, linestyle=&#34;--&#34;)
+    ax1.legend()
+
+    #----Power Plot------#
+    fig2 = plt.figure()
+    ax2=fig2.add_subplot(111)
+
+    ax2.set_ylim(0,1)
+    ax2.set_xlim(0,np.max(time))
+
+    ax2.set_xlabel(&#39;Time [sec]&#39;)
+    ax2.set_ylabel(&#39;Normalised Wave Power&#39;)
+
+    ax2.plot(time,damp,c=&#39;tab:blue&#39;, alpha=0.75)
+    plt.grid(axis=&#39;both&#39;, alpha=.3)
+    plt.show()
+
+    #----L Plot------#
+    fig2 = plt.figure()
+    ax2=fig2.add_subplot(111)
+
+    # ax2.set_ylim(0,1)
+    ax2.set_xlim(0,np.max(time))
+
+    ax2.set_xlabel(&#39;Time [sec]&#39;)
+    ax2.set_ylabel(&#39;L Shell&#39;)
+
+    ax2.plot(time,L,c=&#39;tab:green&#39;, alpha=0.75)
+    plt.grid(axis=&#39;both&#39;, alpha=.3)
+    plt.show()
+
+    #----Lat Plot------#
+    fig2 = plt.figure()
+    ax2=fig2.add_subplot(111)
+
+    # ax2.set_ylim(0,1)
+    ax2.set_xlim(0,np.max(time))
+
+    ax2.set_xlabel(&#39;Time [sec]&#39;)
+    ax2.set_ylabel(&#39;Latitude [deg]&#39;)
+
+    ax2.plot(time,lat,c=&#39;tab:orange&#39;, alpha=0.75)
+    plt.grid(axis=&#39;both&#39;, alpha=.3)
+    plt.show()
+
+    #----Psi Plot------#
+    fig2 = plt.figure()
+    ax2=fig2.add_subplot(111)
+
+    # ax2.set_ylim(0,1)
+    ax2.set_xlim(0,np.max(time))
+
+    ax2.set_xlabel(&#39;Time [sec]&#39;)
+    ax2.set_ylabel(&#39;$\psi$ [deg]&#39;)
+
+    ax2.plot(time,psi,c=&#39;tab:green&#39;, alpha=0.75)
+    plt.grid(axis=&#39;both&#39;, alpha=.3)
+    plt.show()    
+
+    #----Ref Plot------#
+    fig2 = plt.figure()
+    ax2=fig2.add_subplot(111)
+
+    # ax2.set_ylim(0,1)
+    ax2.set_xlim(0,np.max(time))
+
+    ax2.set_xlabel(&#39;Time [sec]&#39;)
+    ax2.set_ylabel(&#39;Refractive Index&#39;)
+
+    ax2.plot(time,ref_ind,c=&#39;tab:red&#39;, alpha=0.75)
+    plt.grid(axis=&#39;both&#39;, alpha=.3)    
+
+    #------Combined L-lat---#
+    fig5 = plt.figure()
+    ax=fig5.add_subplot(111)
+    ax.set_xlabel(&#34;Time [s]&#34;,fontsize=14)
+    ax.set_ylabel(&#34;L-shell&#34;,color=&#39;tab:green&#39;,fontsize=14)
+    ax.plot(time,L,color=&#39;tab:green&#39;)
+    ax.grid(alpha=.3)
+    ax.set_xlim(0,np.max(time))
+    ax2=ax.twinx()
+    # ax2.set_ylim(-20,20)
+    ax2.plot(time,lat,color=&#39;tab:blue&#39;)
+    ax2.set_ylabel(&#34;Latitude [deg]&#34;,color=&#39;tab:blue&#39;,fontsize=14)
+
+    plt.show()
+
+    #------Combined L-lat---#
+    fig5 = plt.figure()
+    ax=fig5.add_subplot(111)
+    ax.set_xlabel(&#34;Time [s]&#34;,fontsize=14)
+    ax.set_ylabel(&#34;Wave normal angle (deg)&#34;,color=&#39;tab:green&#39;,fontsize=14)
+    ax.plot(time,psi,color=&#39;tab:green&#39;)
+    ax.grid(alpha=.3)
+    ax.set_xlim(0,np.max(time))
+    ax2=ax.twinx()
+    # ax2.set_ylim(-20,20)
+    ax2.plot(time,lat,c=&#39;tab:red&#39;)
+    ax2.set_ylabel(&#34;Latitude [deg]&#34;,c=&#39;tab:red&#39;,fontsize=14)
+
+    plt.show()    
+
+        #----------------Plot Ray path-----------
+
+    
+    D2R = (np.pi/180.0)
+    R_E = 6371e3
+    H_IONO=1000e3
+
+    psize = 8                     # plot size in earth radii
+    # L_shells = [1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9,2,2.1,2.2,2.3,2.4,2.5,2.6,2.7,3, 4, 5, 6]    # Field lines to draw
+    L_shells = [2,3, 4, 5, 6]
+    fig, ax = plt.subplots(1,3)
+
+    flashtime = dt.datetime(2010,1,1,0,0,0)
+    tmp_coords = coord.Coords(list(zip(posx, posy, posz)),&#39;SM&#39;,&#39;car&#39;,units=[&#39;m&#39;,&#39;m&#39;,&#39;m&#39;])
+    tvec_datetime = [flashtime + dt.timedelta(seconds=s) for s in time]
+    tmp_coords.ticks = Ticktock(tvec_datetime)
+    tmp_coords2=tmp_coords.convert(&#39;SM&#39;,&#39;sph&#39;)
+    tmp_coords = tmp_coords.convert(&#39;MAG&#39;,&#39;car&#39;)
+    # print(tmp_coords[0])
+    # print(tmp_coords2[0])
+
+    ref_indexs=coord.Coords(list(zip(nx, ny, nz)),&#39;SM&#39;,&#39;car&#39;)
+    tvec_datetime2 = [flashtime + dt.timedelta(seconds=s) for s in time]
+    ref_indexs.ticks = Ticktock(tvec_datetime2)
+    ref_indexs2=ref_indexs.convert(&#39;SM&#39;,&#39;sph&#39;)
+    ref_indexs=ref_indexs.convert(&#39;MAG&#39;,&#39;car&#39;)
+
+    mag_field=coord.Coords(list(zip(Bx, By, Bz)),&#39;SM&#39;,&#39;car&#39;)
+    tvec_datetime3 = [flashtime + dt.timedelta(seconds=s) for s in time]
+    mag_field.ticks = Ticktock(tvec_datetime3)
+    mag_field=mag_field.convert(&#39;MAG&#39;,&#39;car&#39;)
+
+    # print(tmp_coords[0])
+    # print(ref_indexs[0])
+    # print(mag_field[0])
+
+
+
+
+    posx=tmp_coords.x
+    posy=tmp_coords.y
+    posz=tmp_coords.z
+    nx=ref_indexs.x
+    ny=ref_indexs.y
+    nz=ref_indexs.z
+    Bx=mag_field.x
+    Bz=mag_field.y
+    By=mag_field.z
+
+
+    # print(np.shape(tmp_coords))
+    # Plot the earth
+    for i in [0, 1, 2]:
+        earth = plt.Circle((0,0),1,color=&#39;0.5&#39;,alpha=1, zorder=100)
+        iono  = plt.Circle((0,0),(R_E + H_IONO)/R_E, color=&#39;c&#39;,alpha=0.5, zorder=99)
+        ax[i].add_patch(earth)   
+        ax[i].add_patch(iono)
+        tmp_coords.sim_time = time
+
+    # Plot the fieldlines (dipole model; could use something more complex)
+    for Lf in L_shells:
+        # Plot dipole field lines for both profile views
+        lam = np.linspace(-80,80,181)
+        L_r = Lf*pow(np.cos(lam*D2R),2)
+        Lx  = L_r*np.cos(lam*D2R)
+        Ly  = L_r*np.sin(lam*D2R)
+        ax[1].plot(Lx,Ly,color=&#39;r&#39;,linewidth=1,linestyle=&#39;dashed&#39;)   # Field line
+        ax[2].plot(Lx,Ly,color=&#39;r&#39;,linewidth=1,linestyle=&#39;dashed&#39;)   # Field line
+        ax[2].plot(-Lx,Ly,color=&#39;r&#39;,linewidth=1,linestyle=&#39;dashed&#39;)  # Field line (other side)
+
+        # Plot equatorial extent for the top-down view
+        lam = np.linspace(-180,180,181)
+        Lx2  = Lf*np.cos(lam*D2R)
+        Ly2  = Lf*np.sin(lam*D2R)
+        ax[0].plot(Lx2,Ly2,color=&#39;r&#39;,linewidth=1,linestyle=&#39;dashed&#39;)
+
+    lw=2
+
+    for i in range(0,360,10):
+        tmp=i*np.pi/180
+        qx=[np.cos(tmp),6*np.cos(tmp)]
+        qy=[np.sin(tmp),6*np.sin(tmp)]
+        #print(qx,qy)
+        ax[2].plot(qx,qy,&#39;g--&#39;,linewidth=0.5)
+        ax[1].plot(qx,qy,&#39;g--&#39;,linewidth=0.5)
+
+    nmagxz=np.sqrt(nx**2+nz**2)
+    nmagyz=np.sqrt(ny**2+nz**2)
+    nmag=np.sqrt(nx**2+ny**2+nz**2)
+    Bmagxz=np.sqrt(Bx**2+Bz**2)
+    Bmagyz=np.sqrt(By**2+Bz**2)
+    Bmag=np.sqrt(Bx**2+By**2+Bz**2)
+    # ax[0].plot(posx/R_E, posy/R_E, linewidth=lw)
+    ax[0].plot(posx/R_E, posy/R_E, linewidth=lw)
+    if posy[0] &lt; 0:
+        ax[1].plot(posx/R_E, posz/R_E, linewidth=lw, zorder=101)
+        for kk in range(0,len(posx),5):
+            ax[1].quiver( posx[kk]/R_E,  posz[kk]/R_E, nx[kk]/nmagxz[kk], nz[kk]/nmagxz[kk], scale=25.,
+            width=0.003, headwidth=2., headlength=3.)
+            ax[2].quiver( posy[kk]/R_E,  posz[kk]/R_E, ny[kk]/nmagyz[kk], nz[kk]/nmagyz[kk], scale=25.,
+            width=0.003, headwidth=2., headlength=3.)
+    else:
+        ax[1].plot(posx/R_E, posz/R_E, linewidth=lw, zorder=10)
+        for kk in range(0,len(posx),5):
+            ax[1].quiver(posx[kk]/R_E,  posz[kk]/R_E, nx[kk]/nmagxz[kk], nz[kk]/nmagxz[kk], scale=25.,
+            width=0.003, headwidth=2., headlength=3.)
+            # ax[1].quiver(posx[kk]/R_E,  posz[kk]/R_E, Bx[kk]/Bmagxz[kk], Bz[kk]/Bmagxz[kk], scale=25.,
+            # width=0.003, headwidth=2., headlength=3., color=&#39;r&#39;)
+            ax[2].quiver( posy[kk]/R_E,  posz[kk]/R_E, ny[kk]/nmagyz[kk], nz[kk]/nmagyz[kk], scale=25.,
+            width=0.003, headwidth=2., headlength=3.)
+            # ax[2].quiver( posy[kk]/R_E,  posz[kk]/R_E, By[kk]/Bmagyz[kk], Bz[kk]/Bmagyz[kk], scale=25.,
+            # width=0.003, headwidth=2., headlength=3., color=&#39;r&#39;)
+    if  posx[0] &gt; 0:
+        ax[2].plot(posy/R_E, posz/R_E, linewidth=lw, zorder=101)
+    else:
+        ax[2].plot(posy/R_E, posz/R_E, linewidth=lw, zorder=10)
+
+    ax[0].set_title(&#39;XY&#39;)
+    ax[1].set_title(&#39;XZ&#39;)
+    ax[2].set_title(&#39;YZ&#39;)
+    ax[1].set_yticks([])
+    ax[2].set_yticks([])
+
+    ax[1].set_xlabel(&#39;L (R$_E$)&#39;)
+    ax[0].set_ylabel(&#39;L (R$_E$)&#39;)
+
+    ax[0].set_xlim([-psize, psize])
+    ax[0].set_ylim([-psize, psize])
+    ax[1].set_xlim([0, psize])
+    ax[1].set_ylim([-psize/2, psize/2])
+    ax[2].set_xlim([-psize, psize])
+    ax[2].set_ylim([-psize, psize])
+
+    ax[0].set_aspect(&#39;equal&#39;)
+    ax[1].set_aspect(&#39;equal&#39;)
+    ax[2].set_aspect(&#39;equal&#39;)
+    
+    plt.show()
+
+    #-------------4x4 plot---------------------------------
+    fig, axs = plt.subplots(2, 2)
+
+    earth = plt.Circle((0,0),1,color=&#39;0.5&#39;,alpha=1, zorder=100)
+    iono  = plt.Circle((0,0),(R_E + H_IONO)/R_E, color=&#39;c&#39;,alpha=0.5, zorder=99)
+    axs[0,0].add_patch(earth)   
+    axs[0,0].add_patch(iono)
+    axs[0,0].set_xlim([-psize, psize])
+    axs[0,0].set_ylim([-psize, psize])
+
+    for Lf in L_shells:
+        # Plot dipole field lines for both profile views
+        lam = np.linspace(-80,80,181)
+        L_r = Lf*pow(np.cos(lam*D2R),2)
+        Lx  = L_r*np.cos(lam*D2R)
+        Ly  = L_r*np.sin(lam*D2R)
+        axs[0,0].plot(Lx,Ly,color=&#39;r&#39;,linewidth=1,linestyle=&#39;dashed&#39;)   # Field line
+        axs[0,0].plot(-Lx,Ly,color=&#39;r&#39;,linewidth=1,linestyle=&#39;dashed&#39;)
+    for i in range(0,360,10):
+        tmp=i*np.pi/180
+        qx=[np.cos(tmp),6*np.cos(tmp)]
+        qy=[np.sin(tmp),6*np.sin(tmp)]
+        #print(qx,qy)
+        axs[0,0].plot(qx,qy,&#39;g--&#39;,linewidth=0.5)
+
+    if posy[0] &lt; 0:
+        sc=axs[0,0].scatter(posx/R_E, posz/R_E, s=4, c=damp, cmap=&#39;jet&#39;, zorder=101, edgecolor=&#39;none&#39;)
+
+
+        for kk in range(0,len(posx),5):
+            axs[0,0].quiver( posx[kk]/R_E,  posz[kk]/R_E, nx[kk]/nmagxz[kk], nz[kk]/nmagxz[kk], scale=25.,
+            width=0.003, headwidth=2., headlength=3.)
+    else:
+        sc=axs[0,0].scatter(posx/R_E, posz/R_E,s=4, c=damp, cmap=&#39;jet&#39;,  zorder=10, edgecolor=&#39;none&#39;)
+        for kk in range(0,len(posx),5):
+            axs[0,0].quiver(posx[kk]/R_E,  posz[kk]/R_E, nx[kk]/nmagxz[kk], nz[kk]/nmagxz[kk], scale=25.,
+            width=0.003, headwidth=2., headlength=3.)
+
+    axs[0,0].scatter(posx[0]/R_E, posz[0]/R_E, s=60, c=&#39;yellow&#39;, zorder=101,edgecolor=&#39;black&#39;)
+    plt.colorbar(sc,ax=axs[0,0])
+    # plt.text(0.5, 0.5, &#39;matplotlib&#39;, horizontalalignment=&#39;center&#39;, verticalalignment=&#39;center&#39;, transform=ax.transAxes)
+    axs[0,1].set_ylim(0,1)
+    axs[0,1].set_xlim(0,np.max(time))
+
+    axs[0,1].set_xlabel(&#39;Time [sec]&#39;)
+    axs[0,1].set_ylabel(&#39;Normalised Wave Power&#39;)
+
+    axs[1,1].set_xlabel(&#39;L-Shell&#39;)
+    axs[1,1].set_ylabel(&#39;Enhancment Factor&#39;)
+
+    axs[0,0].set_xlabel(&#39;L-shell&#39;)
+    axs[0,0].set_ylabel(&#39;L-shell&#39;)
+
+    axs[0,1].plot(time,damp,c=&#39;tab:green&#39;, alpha=0.75)
+    axs[0,1].grid(axis=&#39;both&#39;, alpha=.3)
+
+
+    axs[1,0].set_xlabel(&#34;Time [s]&#34;,fontsize=14)
+    axs[1,0].set_ylabel(&#34;L-shell&#34;,color=&#39;tab:green&#39;,fontsize=14)
+    axs[1,0].plot(time,L,color=&#39;tab:green&#39;)
+    axs[1,0].grid(alpha=.3)
+    axs[1,0].set_xlim(0,np.max(time))
+    ax2=axs[1,0].twinx()
+    ax2.plot(time,lat,color=&#39;tab:red&#39;)
+    ax2.set_ylabel(&#34;Latitude [deg]&#34;,color=&#39;tab:red&#39;,fontsize=14)
+
+
+    bins=np.arange(0.05,4.05,0.1)
+
+    axs[1,1].hist(L_new,bins=bins,range=[0,4],density=True,weights=mag_new,color=&#39;tab:green&#39;)
+    axs[1,1].grid()
+
+
+
+    axs[0,0].set_xlim([0, psize-2])
+    axs[0,0].set_ylim([-(psize-2)/2, (psize-2)/2])
+
+    # axs[0,0].set_aspect(&#39;equal&#39;)
+    # axs[0,1].set_aspect(&#39;equal&#39;)
+    # axs[1,0].set_aspect(&#39;equal&#39;)
+    # axs[1,1].set_aspect(&#39;equal&#39;)
+    plt.tight_layout()
+    plt.show()
+
+    fig, axs = plt.subplots()
+
+    earth = plt.Circle((0,0),1,color=&#39;0.5&#39;,alpha=1, zorder=100)
+    iono  = plt.Circle((0,0),(R_E + H_IONO)/R_E, color=&#39;c&#39;,alpha=0.5, zorder=99)
+    axs.add_patch(earth)   
+    axs.add_patch(iono)
+    axs.set_xlim([-psize, psize])
+    axs.set_ylim([-psize, psize])
+
+    for Lf in L_shells:
+        # Plot dipole field lines for both profile views
+        lam = np.linspace(-80,80,181)
+        L_r = Lf*pow(np.cos(lam*D2R),2)
+        Lx  = L_r*np.cos(lam*D2R)
+        Ly  = L_r*np.sin(lam*D2R)
+        axs.plot(Lx,Ly,color=&#39;r&#39;,linewidth=1,linestyle=&#39;dashed&#39;)   # Field line
+        axs.plot(-Lx,Ly,color=&#39;r&#39;,linewidth=1,linestyle=&#39;dashed&#39;)
+    for i in range(0,360,10):
+        tmp=i*np.pi/180
+        qx=[np.cos(tmp),6*np.cos(tmp)]
+        qy=[np.sin(tmp),6*np.sin(tmp)]
+        #print(qx,qy)
+        axs.plot(qx,qy,&#39;g--&#39;,linewidth=0.5)
+
+    if posy[0] &lt; 0:
+        sc=axs.scatter(posx/R_E, posz/R_E, s=4, c=damp, cmap=&#39;jet&#39;, zorder=101, edgecolor=&#39;none&#39;)
+
+
+        for kk in range(0,len(posx),20):
+            axs.quiver( posx[0]/R_E,  posz[0]/R_E, nx[0]/nmagxz[0], nz[0]/nmagxz[0], scale=15.,
+            width=0.003, headwidth=2., headlength=3.)
+    else:
+        sc=axs.scatter(posx/R_E, posz/R_E,s=4, c=damp, cmap=&#39;jet&#39;,  zorder=10, edgecolor=&#39;none&#39;)
+        for kk in range(0,len(posx),20):
+            axs.quiver(posx[0]/R_E,  posz[0]/R_E, nx[0]/nmagxz[0], nz[0]/nmagxz[0], scale=15.,
+            width=0.003, headwidth=2., headlength=3.)
+
+    axs.scatter(posx[0]/R_E, posz[0]/R_E, s=60, c=&#39;yellow&#39;, zorder=101,edgecolor=&#39;black&#39;)
+    plt.colorbar(sc,ax=axs)
+    # plt.text(0.5, 0.5, &#39;matplotlib&#39;, horizontalalignment=&#39;center&#39;, verticalalignment=&#39;center&#39;, transform=ax.transAxes)
+
+
+    axs.set_xlabel(&#39;L-shell&#39;)
+    axs.set_ylabel(&#39;L-shell&#39;)
+
+#     axs.set_xlim([0, psize])
+#     axs.set_ylim([-(psize)/2, (psize)/2])
+    axs.set_xlim([1.9, 2.3])
+    axs.set_ylim([-0.5, 0.5])
+    # axs[0,0].set_aspect(&#39;equal&#39;)
+    # axs[0,1].set_aspect(&#39;equal&#39;)
+    # axs[1,0].set_aspect(&#39;equal&#39;)
+    # axs[1,1].set_aspect(&#39;equal&#39;)
+    plt.tight_layout()
+    plt.show()</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="WPIT.LandauDamp_mod" href="index.html">WPIT.LandauDamp_mod</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="WPIT.LandauDamp_mod.ray_plots.ray_plots" href="#WPIT.LandauDamp_mod.ray_plots.ray_plots">ray_plots</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

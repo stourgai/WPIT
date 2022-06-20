@@ -27,4 +27,5 @@ def distribution_bell(vperp,vpar):
 
     f=fbell*(10**12)  #convert to s^3/m^6 from s^3/cm^6
 
+    f=5*f
     return f

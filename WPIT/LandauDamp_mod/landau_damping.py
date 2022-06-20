@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import WPIT.Environment_mod as env
 import WPIT.WaveProperties_mod as wave
 from WPIT.LandauDamp_mod.RayUtils_mod import read_input_ray
-from WPIT.LandauDamp_mod import distribution_bell,distribution_bortnik,distribution_bimaxwellian
+from WPIT.LandauDamp_mod import distribution_bell,distribution_bortnik,distribution_bimaxwellian,distribution_golden2
 from scipy import integrate as scint
 from scipy import special as scp
 
@@ -207,6 +207,9 @@ def landau_damping(ray_file,distr):
     
     elif distr=='Bimaxw':
         fe= lambda vperp,vpar: distribution_bimaxwellian(vperp,vpar)
+
+    elif distr=='Golden':
+        fe= lambda vperp,vpar: distribution_golden2(vperp,vpar)
 
     else:
         print('No ',distr,' distribution. Avalaible options: Bell, Bortnik or Bimaxw')

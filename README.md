@@ -5,7 +5,16 @@ The Wave-Particle Interactions Toolset is an open source, Python-based set of to
 ![WPIT repository overview](wpit_overview.png)
 
 ________________________________________________________________________________________________________________________________________________________
-# The WPIT Repository
+### The WPIT Repository
 
-The WPIT folder contains the source code builded in the form of modules and sub-modules. WPIT contains four modules, i.e. the Environment_mod, the WaveProperties_mod, the LandauDamp_mod and the WPI_mod, which includes three sub-modules, i.e. the whistler_electron_mod, the EMIC_ion_mod and the parallel_EMIC_mod. Each of the modules will be described analytically in the following sections. The Module_descriptions folder contains Jupyter notebooks with analytic theoretical description of the equations of each module along with example calls of each routine. The WPI_tests folder contains reproduction of results of the literature in Jupyter notebook formats, which act as a verification of the code and as tutorials of the use of WPIT. The WPIT_Results folder contains the Jupyter notebooks of the simulations presented in section 4. Lastly, the Documentation folder includes the API documentation of the source code in .html format.
+The WPIT folder contains the source code builded in the form of modules and sub-modules. WPIT contains four modules, i.e. the *Environment_mod*, the *WaveProperties_mod*, the *LandauDamp_mod* and the *WPI_mod*, which includes three sub-modules, i.e. the *whistler_electron_mod*, the *EMIC_ion_mod* and the *parallel_EMIC_mod*. The *Module_descriptions* folder contains Jupyter notebooks with analytic theoretical description of the equations of each module along with example calls of each routine. The *WPI_tests* folder contains reproduction of results of the literature in Jupyter notebook formats, which act as a verification of the code and as tutorials of the use of WPIT. The *WPIT_Results* folder contains the Jupyter notebooks of the simulations presented in WPIT paper. Lastly, the *Documentation* folder includes the API documentation of the source code in .html format.
+
+________________________________________________________________________________________________________________________________________________________
+
+### Testing
+
+The WPIT code has been tested in Ubuntu 18.04LST with Python 3.6.9. The version of the packages for testing are:
+
+*matplotlib 3.6.9
+*numpy 1.19.5
 

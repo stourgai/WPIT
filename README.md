@@ -28,6 +28,6 @@ ________________________________________________________________________________
 
 The *requirements.txt* contains all the package dependencies of WPIT. To install them, run:
 
-```pip install requirements.txt```
+```pip install -r requirements.txt```
 
 Just clone the repository and WPIT is ready to run.

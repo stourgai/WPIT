@@ -24,4 +24,4 @@ The WPIT code has been tested in Ubuntu 18.04LST with Python 3.6.9. The version 
 
 The *requirements.txt* contains all the package dependencies of WPIT. To install them, run:
 
-'''pip install requirements.txt'''
+```pip install requirements.txt```

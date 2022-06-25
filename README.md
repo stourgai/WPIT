@@ -22,6 +22,6 @@ The WPIT code has been tested in Ubuntu 18.04LST with Python 3.6.9. The version 
 - spacepy 0.2.2
 - notebook 6.0.3
 
-The *requirements.txt* contains all the package dependencies of WPIT.
+The *requirements.txt* contains all the package dependencies of WPIT. To install them, run:
 
-Use 'pip install requirements.txt'.
+'''pip install requirements.txt'''

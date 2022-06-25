@@ -16,5 +16,6 @@ ________________________________________________________________________________
 The WPIT code has been tested in Ubuntu 18.04LST with Python 3.6.9. The version of the packages for testing are:
 
 *matplotlib 3.6.9
+
 *numpy 1.19.5
 

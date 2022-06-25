@@ -28,22 +28,25 @@ ________________________________________________________________________________
 **Outputs**:
 _____________________________________________________________________________________________________________________
 
-# Bxw_arg:Bx component of the wave in T
+Bxw_arg:Bx component of the wave in T
 
-# Byw_arg:By component of the wave in T
+Byw_arg:By component of the wave in T
 
-# Bzw_arg:Bz component of the wave in T
+Bzw_arg:Bz component of the wave in T
 
-# Exw_arg:Ex component of the wave in V/m
+Exw_arg:Ex component of the wave in V/m
 
-# Eyw_arg:Ey component of the wave in V/m
+Eyw_arg:Ey component of the wave in V/m
 
-# Ezw_arg:Ez component of the wave in V/m
+Ezw_arg:Ez component of the wave in V/m
 _____________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________
 
 **Reference**:
 _____________________________________________________________________________________________________________________
+
+Jasna, D., Inan, U. S., and Bell, T. F. (1992). Precipitation of suprathermal (100 ev) electrons by oblique
+whistler waves. Geophysical research letters 19, 1639–1642
 _________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________
 

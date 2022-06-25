@@ -11,35 +11,38 @@ ________________________________________________________________________________
 **Inputs**:
 _____________________________________________________________________________________________________________________
 
-# m_res_arg: resonance harmonic number
+m_res_arg: resonance harmonic number
 
-# w_wave_arg: wave frequency
+w_wave_arg: wave frequency
 
-# kz_arg: z component of the wave number
+kz_arg: z component of the wave number
 
-# wce_arg: gyrofrequency
+wce_arg: gyrofrequency
 
-# alpha_arg: local pitch angle in rad
+alpha_arg: local pitch angle in rad
 _____________________________________________________________________________________________________________________
 _______________________________________________________________________________________________________________________
 
 **Outputs**:
 _____________________________________________________________________________________________________________________
 
-# v_para_res:parallel resonant velocity
+v_para_res:parallel resonant velocity
 
-# v_per_res:perpendicular resonant velocity
+v_per_res:perpendicular resonant velocity
 
-# v_tot_res:total resonant velocity
+v_tot_res:total resonant velocity
 
-# E_res:resonant energy in ergs
+E_res:resonant energy in ergs
 
-# gamma_res: resonant Lorentz factor
+gamma_res: resonant Lorentz factor
 _____________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________
 
 **Reference**:
 _____________________________________________________________________________________________________________________
+
+Sousa, A. P. (2018). Global and seasonal effects of lightning-induced electron precipitation (Stanford
+University)
 ______________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________
 

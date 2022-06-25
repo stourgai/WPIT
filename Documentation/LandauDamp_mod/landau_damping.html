@@ -1,0 +1,749 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>WPIT.LandauDamp_mod.landau_damping API documentation</title>
+<meta name="description" content="" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>WPIT.LandauDamp_mod.landau_damping</code></h1>
+</header>
+<section id="section-intro">
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">import pandas as pd    
+import numpy as np
+import matplotlib.pyplot as plt
+import WPIT.Environment_mod as env
+import WPIT.WaveProperties_mod as wave
+from WPIT.LandauDamp_mod.RayUtils_mod import read_input_ray
+from WPIT.LandauDamp_mod import distribution_bell,distribution_bortnik,distribution_bimaxwellian,distribution_golden2
+from scipy import integrate as scint
+from scipy import special as scp
+
+
+def spatialdamping(f, kperp, kpar, w, m, wch, qh, mh,qs, Ns, ms, nus, B0):
+
+    # Compute the spatial damping rate ki in a hot plasma
+
+    theta=np.arctan2(kperp,kpar)
+    n=np.sqrt((env.const.c_light**2/w**2)*(kperp**2+kpar**2))
+
+    [S,D,P,R,L] = wave.stix_parameters(w, Ns[0],Ns[1],Ns[2],Ns[3], B0)
+
+    
+
+    A = S*np.sin(theta)**2 + P*np.cos(theta)**2
+    B = R*L*np.sin(theta)**2 + P*S*(1+np.cos(theta)**2)
+
+    # print(&#39;A=&#39;,A)
+    # print(&#39;B=&#39;,B)
+    ki = 0
+ 
+    for ii in range(0,len(f)):
+        Di=hot_dispersion_imag(f[ii], kperp, kpar, w, m , wch[ii],
+                                    qh[ii], mh[ii], qs , Ns, ms, nus, B0)
+        ki=ki + -(w/env.const.c_light)*(1/2)*(1/(4*n*(2*A*(n**2)-B)))*Di
+        # ki=ki + -(w/const.c_light)*(1/(4*n*(2*A*(n**2)-B)))*Di #ST removed (1/2) from ki
+
+    return ki
+
+def integrand(f,vperp,kperp,kpar,w,m,wch,qh,mh,R,L,P,S):
+
+    theta = np.arctan2(kperp,kpar)
+    #refractive index
+    n=np.sqrt((env.const.c_light**2/w**2)*(kperp**2+kpar**2))
+
+    ct=np.cos(theta)
+    st=np.sin(theta)
+
+    vperp_vec=vperp
+    ret=np.zeros(np.size(vperp_vec))
+
+    
+
+
+    # for vperp_i in range (0,len(vperp_vec)):
+
+    for vperp_i in range (0,1):
+        # vperp=vperp_vec[vperp_i]
+        vperp=vperp_vec
+
+        suminteg=0
+
+        for mi in range(0,len(m)):
+            Jm=scp.jv(m[mi], kperp*vperp/wch)
+            Jm_m1=scp.jv(m[mi]-1, kperp*vperp/wch)
+            Jm_p1=scp.jv(m[mi]+1, kperp*vperp/wch)
+            
+
+            Jm=np.real(Jm)
+            Jm_m1=np.real(Jm_m1)
+            Jm_p1=np.real(Jm_p1)
+
+            #evaluate vpar only at resonance
+            vpar = (w-m[mi]*wch)/kpar
+            # evaluate G1
+            G1 = fG1(f, vperp, vpar, kperp, kpar, w)
+            # evaluate G2
+            G2 = fG2(f, vperp, vpar, kperp, kpar, w, m[mi], wch)      
+
+            suminteg=suminteg+  \
+                (G1*((P-n**2*st**2)*(2*(L-n**2)*vperp*Jm_p1*Jm_p1+2*vperp*(R-n**2)*Jm_m1**2+    \
+                    n**2*st*st*vperp*(Jm_p1-Jm_m1)*(Jm_p1-Jm_m1))-    \
+                    n**2*ct*st*(2*vpar*Jm*(Jm_p1*(R-n**2)+Jm_m1*(L-n**2))+  \
+                    n**2*ct*st*vperp*(Jm_p1-Jm_m1)*(Jm_p1-Jm_m1)))+  \
+                    G2*(4*vpar*Jm*((L-n**2)*(R-n**2)+n*n*st*st*(S-n**2))-
+                    2*n*n*ct*st*((R-n**2)*vperp*Jm_m1+(L-n**2)*vperp*Jm_p1)))
+            
+        ret[vperp_i]=-2*np.pi*np.pi*((qh*qh/mh/env.const.eps0)/(w*np.absolute(kpar)))*suminteg*vperp
+
+    return ret
+
+def hot_dispersion_imag(f, kperp, kpar, w, m, wch, qh, mh, qs, Ns, ms, nus, B0 ):
+
+    eps=2.220446049250313e-16
+
+    [S,D,P,R,L] = wave.stix_parameters(w, Ns[0],Ns[1],Ns[2],Ns[3], B0)
+    
+
+    integrand_vperp=lambda vperp: integrand(f, vperp, kperp, kpar, w, m,
+                                      wch, qh, mh,R, L, P, S)
+    
+
+    k=env.const.c_light
+    integrand_vperpnorm= lambda vperp: k*integrand_vperp(k*vperp)
+
+    integrand_t=lambda t: ((1+eps)/(t**2+eps))*integrand_vperpnorm((1-t+eps)/(t+eps))
+
+    # integrated_integrand=scint.quad(integrand_t,0,1,epsabs=1e-3,maxp1=100,limit=100)
+    integrated_integrand=scint.quad(integrand_vperpnorm,0,1,epsabs=1e-3,maxp1=100,limit=100)
+    # integrated_integrand=scint.quad(integrand_vperp,0,k,maxp1=100,limit=100)
+    ret=integrated_integrand[0]
+  
+    return ret
+
+
+
+def fG1(f, vperp, vpar, kperp, kpar, w):
+
+    eps=2.220446049250313e-16
+    DEL=1e-8
+    d=DEL*np.absolute(vperp)
+    if d&lt;10*eps:
+        d=10*eps 
+
+    df_dvperp = (f(vperp+d, vpar)-f(vperp-d,vpar))/(2*d)
+
+    d=DEL*np.absolute(vpar)
+    if d&lt;10*eps:
+        d=10*eps 
+
+    df_dvpar = (f(vperp, vpar+d)-f(vperp,vpar-d))/(2*d)
+
+    G1 = df_dvperp-(kpar/w)*(vpar*df_dvperp - vperp*df_dvpar)
+
+    return G1
+
+def fG2(f, vperp, vpar, kperp, kpar, w, m, wch):
+
+    # f = distribution function, a function handle that takes as input 
+    #     (vperp,vpar) and returns the value of the distribution at that
+    #     point.
+    # vperp:  perpendicular velocity
+    # vpar:   parallel velocity
+    # kperp:  perpendicular component of k vector
+    # kpar:   parallel component of k vector
+    # w:      frequency, rad/s 
+    # m:      resonance (0=landau, -1,+1=cyclotron, etc.)
+    # wch:    hot (signed) gyrofrequency, negative for electrons
+    DEL=1e-8
+
+    eps=2.220446049250313e-16
+    d=DEL*np.absolute(vperp)
+    if d&lt;10*eps:
+        d=10*eps 
+
+    df_dvperp = (f(vperp+d, vpar)-f(vperp-d,vpar))/(2*d)
+
+    d=DEL*np.absolute(vpar)
+    if d&lt;10*eps:
+        d=10*eps 
+
+    df_dvpar = (f(vperp, vpar+d)-f(vperp,vpar-d))/(2*d)
+
+    Jm=np.real(scp.jv(m,kperp*vperp/wch))
+
+    G2 = Jm*(df_dvpar-(m*wch+eps)/(w*vperp+eps)*(vpar*df_dvperp - vperp*df_dvpar))
+    return G2
+
+def landau_damping(ray_file,distr):
+
+    ray_in=read_input_ray(ray_file)
+
+    # print(df.posx)
+    psi=np.zeros(len(ray_in.time))
+    freq=ray_in.freq
+
+    for kk in range (0,len(ray_in.time)):
+
+        nmag0=np.sqrt(ray_in.nx[kk]*ray_in.nx[kk]+ray_in.ny[kk]*ray_in.ny[kk]+ray_in.nz[kk]*ray_in.nz[kk])
+        Bmag0=np.sqrt(ray_in.Bx[kk]*ray_in.Bx[kk]+ray_in.By[kk]*ray_in.By[kk]+ray_in.Bz[kk]*ray_in.Bz[kk])
+        pmag0=np.sqrt(ray_in.posx[kk]*ray_in.posx[kk]+ray_in.posy[kk]*ray_in.posy[kk]+ray_in.posz[kk]*ray_in.posz[kk])
+        n=[ray_in.nx[kk]/nmag0,ray_in.ny[kk]/nmag0,ray_in.nz[kk]/nmag0]
+        B=[ray_in.Bx[kk]/Bmag0,ray_in.By[kk]/Bmag0,ray_in.Bz[kk]/Bmag0]
+        p=[ray_in.posx[kk]/pmag0,ray_in.posy[kk]/pmag0,ray_in.posz[kk]/pmag0]
+
+        nBdot=np.dot(n,B)
+        ndot=np.dot(n,n)
+        Bdot=np.dot(B,B)
+
+        cos2psi=(nBdot*nBdot)/(ndot*Bdot)
+        cospsi=np.sqrt(cos2psi)
+        psi2=np.arccos(cospsi)
+        psi[kk]=psi2
+        # print(np.rad2deg(psi[kk]))
+        
+
+
+    t=ray_in.time
+    w=ray_in.w[kk]
+    # nus=[ray_in.nus1,ray_in.nus2,ray_in.nus3]
+    nus=[0,0,0]
+
+
+    if distr==&#39;Bell&#39;:
+        fe= lambda vperp,vpar: distribution_bell(vperp,vpar)
+
+    elif distr==&#39;Bortnik&#39;:
+        fe= lambda vperp,vpar: distribution_bortnik(vperp,vpar)
+    
+    elif distr==&#39;Bimaxw&#39;:
+        fe= lambda vperp,vpar: distribution_bimaxwellian(vperp,vpar)
+
+    elif distr==&#39;Golden&#39;:
+        fe= lambda vperp,vpar: distribution_golden2(vperp,vpar)
+
+    else:
+        print(&#39;No &#39;,distr,&#39; distribution. Avalaible options: Bell, Bortnik or Bimaxw&#39;)
+
+
+    #resonance orders to include in damping (m=0 Landau is the most signifficant by far)
+    mres=[-2,-1,0,1,2]
+
+    fs = [fe]    
+
+    magnitude=np.zeros(np.size(t))
+    kis=np.zeros(np.size(t))
+    magnitude[0]=1  #set initial magnitude of the power, normalised thus magnitude[0]=1
+            
+    print(&#34;step of total steps:&#34;)
+    for ii in range(1,len(t)):
+        print(&#39;%d of %d&#39; %(ii-1, len(t)-1), end=&#39;\r&#39;)
+        # qe_h = env.const.qe
+        # me_h=env.const.me
+        normB=np.sqrt(ray_in.Bx[ii]*ray_in.Bx[ii]+ray_in.By[ii]*ray_in.By[ii]+ray_in.Bz[ii]*ray_in.Bz[ii])
+        wce_h=((env.const.qe*normB)/env.const.me)
+        # vector of hot plasma properties (one per hot species)
+        wchs=[wce_h]
+        qhs=[env.const.qe]
+        mhs=[env.const.me]
+
+        kx=ray_in.nx[ii]*w/env.const.c_light
+        ky=ray_in.ny[ii]*w/env.const.c_light
+        kz=ray_in.nz[ii]*w/env.const.c_light
+        k=np.array([kx,ky,kz])
+        kmag=np.sqrt(kx*kx+ky*ky+kz*kz)
+
+        Bhat=np.array([ray_in.Bx[ii]/normB,ray_in.By[ii]/normB,ray_in.Bz[ii]/normB])
+
+
+        vgrel=[ray_in.vgrelx[ii],ray_in.vgrely[ii],ray_in.vgrelz[ii]]
+        kpar=np.dot(k,Bhat)
+
+        kperp=k-kpar*Bhat
+
+        kperp=np.sqrt(kperp[0]*kperp[0]+kperp[1]*kperp[1]+kperp[2]*kperp[2])
+        kmag=np.sqrt(kx*kx+ky*ky+kz*kz)
+        vgrelmag=np.sqrt(ray_in.vgrelx[ii]*ray_in.vgrelx[ii]+ray_in.vgrely[ii]*ray_in.vgrely[ii]+ray_in.vgrelz[ii]*ray_in.vgrelz[ii])
+
+        qs=np.array([ray_in.qs1[ii],ray_in.qs2[ii],ray_in.qs3[ii],ray_in.qs4[ii]])
+        Ns=np.array([ray_in.Ns1[ii],ray_in.Ns2[ii],ray_in.Ns3[ii],ray_in.Ns4[ii]])
+        ms=np.array([ray_in.ms1[ii],ray_in.ms2[ii],ray_in.ms3[ii],ray_in.ms4[ii]])
+        nus=np.array([ray_in.nus1[ii],ray_in.nus2[ii],ray_in.nus3[ii],ray_in.nus4[ii]])
+
+
+        if kmag!=0:
+            ki=spatialdamping(fs,kperp,kpar,w,mres,wchs,qhs,mhs,qs,Ns,ms,nus, normB)
+            ki_along_vg=ki*((np.dot(k,vgrel))/(kmag*vgrelmag))
+
+            posx=ray_in.posx[ii]-ray_in.posx[ii-1]
+            posy=ray_in.posy[ii]-ray_in.posy[ii-1]
+            posz=ray_in.posz[ii]-ray_in.posz[ii-1]
+
+            dist=np.sqrt(posx**2+posy**2+posz**2)
+            kis[ii]=ki_along_vg
+            magnitude[ii]=magnitude[ii-1]*np.exp(-dist*ki) 
+            # if magnitude[ii]&lt;0.01:
+            #     break
+        else:
+            print(&#39;Re[n]=0, not solving evanescent mode&#39;)
+    print(kis[1],magnitude[0],magnitude[2])
+
+
+    print(&#39;done&#39;)
+    print (&#34;Finished with Landau damping&#34;)
+
+
+    # mag_zero=np.where(magnitude == 0)
+
+    # print(mag_zero[0][0])
+
+    
+    fig2, ax2 = plt.subplots(figsize=(9,10))
+    # ax2=fig2.add_subplot(111)
+
+    ax2.set_ylim(0,1)
+    # ax2.set_xlim(0,t[mag_zero[0][0]])
+
+    ax2.set_xlabel(&#39;Time [sec]&#39;)
+    ax2.set_ylabel(&#39;Normalised Wave Power&#39;)
+
+    ax2.plot(t,magnitude,c=&#39;tab:green&#39;, alpha=0.75)
+    plt.grid()
+    plt.show()
+
+    print(&#39;Saving file...&#39;)
+
+
+
+    data={&#39;time&#39;:ray_in.time,&#39;damp&#39;:magnitude}    
+    df = pd.DataFrame(data)
+
+
+
+    
+    df.to_csv(ray_file+&#39;_damping.csv&#39;,sep=&#39;,&#39;,index=False)
+
+    print(&#39;Saved file as:&#39;, ray_file+&#39;_damping.csv&#39;)</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="WPIT.LandauDamp_mod.landau_damping.fG1"><code class="name flex">
+<span>def <span class="ident">fG1</span></span>(<span>f, vperp, vpar, kperp, kpar, w)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def fG1(f, vperp, vpar, kperp, kpar, w):
+
+    eps=2.220446049250313e-16
+    DEL=1e-8
+    d=DEL*np.absolute(vperp)
+    if d&lt;10*eps:
+        d=10*eps 
+
+    df_dvperp = (f(vperp+d, vpar)-f(vperp-d,vpar))/(2*d)
+
+    d=DEL*np.absolute(vpar)
+    if d&lt;10*eps:
+        d=10*eps 
+
+    df_dvpar = (f(vperp, vpar+d)-f(vperp,vpar-d))/(2*d)
+
+    G1 = df_dvperp-(kpar/w)*(vpar*df_dvperp - vperp*df_dvpar)
+
+    return G1</code></pre>
+</details>
+</dd>
+<dt id="WPIT.LandauDamp_mod.landau_damping.fG2"><code class="name flex">
+<span>def <span class="ident">fG2</span></span>(<span>f, vperp, vpar, kperp, kpar, w, m, wch)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def fG2(f, vperp, vpar, kperp, kpar, w, m, wch):
+
+    # f = distribution function, a function handle that takes as input 
+    #     (vperp,vpar) and returns the value of the distribution at that
+    #     point.
+    # vperp:  perpendicular velocity
+    # vpar:   parallel velocity
+    # kperp:  perpendicular component of k vector
+    # kpar:   parallel component of k vector
+    # w:      frequency, rad/s 
+    # m:      resonance (0=landau, -1,+1=cyclotron, etc.)
+    # wch:    hot (signed) gyrofrequency, negative for electrons
+    DEL=1e-8
+
+    eps=2.220446049250313e-16
+    d=DEL*np.absolute(vperp)
+    if d&lt;10*eps:
+        d=10*eps 
+
+    df_dvperp = (f(vperp+d, vpar)-f(vperp-d,vpar))/(2*d)
+
+    d=DEL*np.absolute(vpar)
+    if d&lt;10*eps:
+        d=10*eps 
+
+    df_dvpar = (f(vperp, vpar+d)-f(vperp,vpar-d))/(2*d)
+
+    Jm=np.real(scp.jv(m,kperp*vperp/wch))
+
+    G2 = Jm*(df_dvpar-(m*wch+eps)/(w*vperp+eps)*(vpar*df_dvperp - vperp*df_dvpar))
+    return G2</code></pre>
+</details>
+</dd>
+<dt id="WPIT.LandauDamp_mod.landau_damping.hot_dispersion_imag"><code class="name flex">
+<span>def <span class="ident">hot_dispersion_imag</span></span>(<span>f, kperp, kpar, w, m, wch, qh, mh, qs, Ns, ms, nus, B0)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def hot_dispersion_imag(f, kperp, kpar, w, m, wch, qh, mh, qs, Ns, ms, nus, B0 ):
+
+    eps=2.220446049250313e-16
+
+    [S,D,P,R,L] = wave.stix_parameters(w, Ns[0],Ns[1],Ns[2],Ns[3], B0)
+    
+
+    integrand_vperp=lambda vperp: integrand(f, vperp, kperp, kpar, w, m,
+                                      wch, qh, mh,R, L, P, S)
+    
+
+    k=env.const.c_light
+    integrand_vperpnorm= lambda vperp: k*integrand_vperp(k*vperp)
+
+    integrand_t=lambda t: ((1+eps)/(t**2+eps))*integrand_vperpnorm((1-t+eps)/(t+eps))
+
+    # integrated_integrand=scint.quad(integrand_t,0,1,epsabs=1e-3,maxp1=100,limit=100)
+    integrated_integrand=scint.quad(integrand_vperpnorm,0,1,epsabs=1e-3,maxp1=100,limit=100)
+    # integrated_integrand=scint.quad(integrand_vperp,0,k,maxp1=100,limit=100)
+    ret=integrated_integrand[0]
+  
+    return ret</code></pre>
+</details>
+</dd>
+<dt id="WPIT.LandauDamp_mod.landau_damping.integrand"><code class="name flex">
+<span>def <span class="ident">integrand</span></span>(<span>f, vperp, kperp, kpar, w, m, wch, qh, mh, R, L, P, S)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def integrand(f,vperp,kperp,kpar,w,m,wch,qh,mh,R,L,P,S):
+
+    theta = np.arctan2(kperp,kpar)
+    #refractive index
+    n=np.sqrt((env.const.c_light**2/w**2)*(kperp**2+kpar**2))
+
+    ct=np.cos(theta)
+    st=np.sin(theta)
+
+    vperp_vec=vperp
+    ret=np.zeros(np.size(vperp_vec))
+
+    
+
+
+    # for vperp_i in range (0,len(vperp_vec)):
+
+    for vperp_i in range (0,1):
+        # vperp=vperp_vec[vperp_i]
+        vperp=vperp_vec
+
+        suminteg=0
+
+        for mi in range(0,len(m)):
+            Jm=scp.jv(m[mi], kperp*vperp/wch)
+            Jm_m1=scp.jv(m[mi]-1, kperp*vperp/wch)
+            Jm_p1=scp.jv(m[mi]+1, kperp*vperp/wch)
+            
+
+            Jm=np.real(Jm)
+            Jm_m1=np.real(Jm_m1)
+            Jm_p1=np.real(Jm_p1)
+
+            #evaluate vpar only at resonance
+            vpar = (w-m[mi]*wch)/kpar
+            # evaluate G1
+            G1 = fG1(f, vperp, vpar, kperp, kpar, w)
+            # evaluate G2
+            G2 = fG2(f, vperp, vpar, kperp, kpar, w, m[mi], wch)      
+
+            suminteg=suminteg+  \
+                (G1*((P-n**2*st**2)*(2*(L-n**2)*vperp*Jm_p1*Jm_p1+2*vperp*(R-n**2)*Jm_m1**2+    \
+                    n**2*st*st*vperp*(Jm_p1-Jm_m1)*(Jm_p1-Jm_m1))-    \
+                    n**2*ct*st*(2*vpar*Jm*(Jm_p1*(R-n**2)+Jm_m1*(L-n**2))+  \
+                    n**2*ct*st*vperp*(Jm_p1-Jm_m1)*(Jm_p1-Jm_m1)))+  \
+                    G2*(4*vpar*Jm*((L-n**2)*(R-n**2)+n*n*st*st*(S-n**2))-
+                    2*n*n*ct*st*((R-n**2)*vperp*Jm_m1+(L-n**2)*vperp*Jm_p1)))
+            
+        ret[vperp_i]=-2*np.pi*np.pi*((qh*qh/mh/env.const.eps0)/(w*np.absolute(kpar)))*suminteg*vperp
+
+    return ret</code></pre>
+</details>
+</dd>
+<dt id="WPIT.LandauDamp_mod.landau_damping.landau_damping"><code class="name flex">
+<span>def <span class="ident">landau_damping</span></span>(<span>ray_file, distr)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def landau_damping(ray_file,distr):
+
+    ray_in=read_input_ray(ray_file)
+
+    # print(df.posx)
+    psi=np.zeros(len(ray_in.time))
+    freq=ray_in.freq
+
+    for kk in range (0,len(ray_in.time)):
+
+        nmag0=np.sqrt(ray_in.nx[kk]*ray_in.nx[kk]+ray_in.ny[kk]*ray_in.ny[kk]+ray_in.nz[kk]*ray_in.nz[kk])
+        Bmag0=np.sqrt(ray_in.Bx[kk]*ray_in.Bx[kk]+ray_in.By[kk]*ray_in.By[kk]+ray_in.Bz[kk]*ray_in.Bz[kk])
+        pmag0=np.sqrt(ray_in.posx[kk]*ray_in.posx[kk]+ray_in.posy[kk]*ray_in.posy[kk]+ray_in.posz[kk]*ray_in.posz[kk])
+        n=[ray_in.nx[kk]/nmag0,ray_in.ny[kk]/nmag0,ray_in.nz[kk]/nmag0]
+        B=[ray_in.Bx[kk]/Bmag0,ray_in.By[kk]/Bmag0,ray_in.Bz[kk]/Bmag0]
+        p=[ray_in.posx[kk]/pmag0,ray_in.posy[kk]/pmag0,ray_in.posz[kk]/pmag0]
+
+        nBdot=np.dot(n,B)
+        ndot=np.dot(n,n)
+        Bdot=np.dot(B,B)
+
+        cos2psi=(nBdot*nBdot)/(ndot*Bdot)
+        cospsi=np.sqrt(cos2psi)
+        psi2=np.arccos(cospsi)
+        psi[kk]=psi2
+        # print(np.rad2deg(psi[kk]))
+        
+
+
+    t=ray_in.time
+    w=ray_in.w[kk]
+    # nus=[ray_in.nus1,ray_in.nus2,ray_in.nus3]
+    nus=[0,0,0]
+
+
+    if distr==&#39;Bell&#39;:
+        fe= lambda vperp,vpar: distribution_bell(vperp,vpar)
+
+    elif distr==&#39;Bortnik&#39;:
+        fe= lambda vperp,vpar: distribution_bortnik(vperp,vpar)
+    
+    elif distr==&#39;Bimaxw&#39;:
+        fe= lambda vperp,vpar: distribution_bimaxwellian(vperp,vpar)
+
+    elif distr==&#39;Golden&#39;:
+        fe= lambda vperp,vpar: distribution_golden2(vperp,vpar)
+
+    else:
+        print(&#39;No &#39;,distr,&#39; distribution. Avalaible options: Bell, Bortnik or Bimaxw&#39;)
+
+
+    #resonance orders to include in damping (m=0 Landau is the most signifficant by far)
+    mres=[-2,-1,0,1,2]
+
+    fs = [fe]    
+
+    magnitude=np.zeros(np.size(t))
+    kis=np.zeros(np.size(t))
+    magnitude[0]=1  #set initial magnitude of the power, normalised thus magnitude[0]=1
+            
+    print(&#34;step of total steps:&#34;)
+    for ii in range(1,len(t)):
+        print(&#39;%d of %d&#39; %(ii-1, len(t)-1), end=&#39;\r&#39;)
+        # qe_h = env.const.qe
+        # me_h=env.const.me
+        normB=np.sqrt(ray_in.Bx[ii]*ray_in.Bx[ii]+ray_in.By[ii]*ray_in.By[ii]+ray_in.Bz[ii]*ray_in.Bz[ii])
+        wce_h=((env.const.qe*normB)/env.const.me)
+        # vector of hot plasma properties (one per hot species)
+        wchs=[wce_h]
+        qhs=[env.const.qe]
+        mhs=[env.const.me]
+
+        kx=ray_in.nx[ii]*w/env.const.c_light
+        ky=ray_in.ny[ii]*w/env.const.c_light
+        kz=ray_in.nz[ii]*w/env.const.c_light
+        k=np.array([kx,ky,kz])
+        kmag=np.sqrt(kx*kx+ky*ky+kz*kz)
+
+        Bhat=np.array([ray_in.Bx[ii]/normB,ray_in.By[ii]/normB,ray_in.Bz[ii]/normB])
+
+
+        vgrel=[ray_in.vgrelx[ii],ray_in.vgrely[ii],ray_in.vgrelz[ii]]
+        kpar=np.dot(k,Bhat)
+
+        kperp=k-kpar*Bhat
+
+        kperp=np.sqrt(kperp[0]*kperp[0]+kperp[1]*kperp[1]+kperp[2]*kperp[2])
+        kmag=np.sqrt(kx*kx+ky*ky+kz*kz)
+        vgrelmag=np.sqrt(ray_in.vgrelx[ii]*ray_in.vgrelx[ii]+ray_in.vgrely[ii]*ray_in.vgrely[ii]+ray_in.vgrelz[ii]*ray_in.vgrelz[ii])
+
+        qs=np.array([ray_in.qs1[ii],ray_in.qs2[ii],ray_in.qs3[ii],ray_in.qs4[ii]])
+        Ns=np.array([ray_in.Ns1[ii],ray_in.Ns2[ii],ray_in.Ns3[ii],ray_in.Ns4[ii]])
+        ms=np.array([ray_in.ms1[ii],ray_in.ms2[ii],ray_in.ms3[ii],ray_in.ms4[ii]])
+        nus=np.array([ray_in.nus1[ii],ray_in.nus2[ii],ray_in.nus3[ii],ray_in.nus4[ii]])
+
+
+        if kmag!=0:
+            ki=spatialdamping(fs,kperp,kpar,w,mres,wchs,qhs,mhs,qs,Ns,ms,nus, normB)
+            ki_along_vg=ki*((np.dot(k,vgrel))/(kmag*vgrelmag))
+
+            posx=ray_in.posx[ii]-ray_in.posx[ii-1]
+            posy=ray_in.posy[ii]-ray_in.posy[ii-1]
+            posz=ray_in.posz[ii]-ray_in.posz[ii-1]
+
+            dist=np.sqrt(posx**2+posy**2+posz**2)
+            kis[ii]=ki_along_vg
+            magnitude[ii]=magnitude[ii-1]*np.exp(-dist*ki) 
+            # if magnitude[ii]&lt;0.01:
+            #     break
+        else:
+            print(&#39;Re[n]=0, not solving evanescent mode&#39;)
+    print(kis[1],magnitude[0],magnitude[2])
+
+
+    print(&#39;done&#39;)
+    print (&#34;Finished with Landau damping&#34;)
+
+
+    # mag_zero=np.where(magnitude == 0)
+
+    # print(mag_zero[0][0])
+
+    
+    fig2, ax2 = plt.subplots(figsize=(9,10))
+    # ax2=fig2.add_subplot(111)
+
+    ax2.set_ylim(0,1)
+    # ax2.set_xlim(0,t[mag_zero[0][0]])
+
+    ax2.set_xlabel(&#39;Time [sec]&#39;)
+    ax2.set_ylabel(&#39;Normalised Wave Power&#39;)
+
+    ax2.plot(t,magnitude,c=&#39;tab:green&#39;, alpha=0.75)
+    plt.grid()
+    plt.show()
+
+    print(&#39;Saving file...&#39;)
+
+
+
+    data={&#39;time&#39;:ray_in.time,&#39;damp&#39;:magnitude}    
+    df = pd.DataFrame(data)
+
+
+
+    
+    df.to_csv(ray_file+&#39;_damping.csv&#39;,sep=&#39;,&#39;,index=False)
+
+    print(&#39;Saved file as:&#39;, ray_file+&#39;_damping.csv&#39;)</code></pre>
+</details>
+</dd>
+<dt id="WPIT.LandauDamp_mod.landau_damping.spatialdamping"><code class="name flex">
+<span>def <span class="ident">spatialdamping</span></span>(<span>f, kperp, kpar, w, m, wch, qh, mh, qs, Ns, ms, nus, B0)</span>
+</code></dt>
+<dd>
+<div class="desc"></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def spatialdamping(f, kperp, kpar, w, m, wch, qh, mh,qs, Ns, ms, nus, B0):
+
+    # Compute the spatial damping rate ki in a hot plasma
+
+    theta=np.arctan2(kperp,kpar)
+    n=np.sqrt((env.const.c_light**2/w**2)*(kperp**2+kpar**2))
+
+    [S,D,P,R,L] = wave.stix_parameters(w, Ns[0],Ns[1],Ns[2],Ns[3], B0)
+
+    
+
+    A = S*np.sin(theta)**2 + P*np.cos(theta)**2
+    B = R*L*np.sin(theta)**2 + P*S*(1+np.cos(theta)**2)
+
+    # print(&#39;A=&#39;,A)
+    # print(&#39;B=&#39;,B)
+    ki = 0
+ 
+    for ii in range(0,len(f)):
+        Di=hot_dispersion_imag(f[ii], kperp, kpar, w, m , wch[ii],
+                                    qh[ii], mh[ii], qs , Ns, ms, nus, B0)
+        ki=ki + -(w/env.const.c_light)*(1/2)*(1/(4*n*(2*A*(n**2)-B)))*Di
+        # ki=ki + -(w/const.c_light)*(1/(4*n*(2*A*(n**2)-B)))*Di #ST removed (1/2) from ki
+
+    return ki</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul></ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="WPIT.LandauDamp_mod" href="index.html">WPIT.LandauDamp_mod</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="two-column">
+<li><code><a title="WPIT.LandauDamp_mod.landau_damping.fG1" href="#WPIT.LandauDamp_mod.landau_damping.fG1">fG1</a></code></li>
+<li><code><a title="WPIT.LandauDamp_mod.landau_damping.fG2" href="#WPIT.LandauDamp_mod.landau_damping.fG2">fG2</a></code></li>
+<li><code><a title="WPIT.LandauDamp_mod.landau_damping.hot_dispersion_imag" href="#WPIT.LandauDamp_mod.landau_damping.hot_dispersion_imag">hot_dispersion_imag</a></code></li>
+<li><code><a title="WPIT.LandauDamp_mod.landau_damping.integrand" href="#WPIT.LandauDamp_mod.landau_damping.integrand">integrand</a></code></li>
+<li><code><a title="WPIT.LandauDamp_mod.landau_damping.landau_damping" href="#WPIT.LandauDamp_mod.landau_damping.landau_damping">landau_damping</a></code></li>
+<li><code><a title="WPIT.LandauDamp_mod.landau_damping.spatialdamping" href="#WPIT.LandauDamp_mod.landau_damping.spatialdamping">spatialdamping</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>

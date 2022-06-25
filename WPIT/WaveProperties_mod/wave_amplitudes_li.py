@@ -28,22 +28,26 @@ ________________________________________________________________________________
 **Outputs**:
 _____________________________________________________________________________________________________________________
 
-# Bxw_arg:Bx component of the wave in T
+Bxw_arg:Bx component of the wave in T
 
-# Byw_arg:By component of the wave in T
+Byw_arg:By component of the wave in T
 
-# Bzw_arg:Bz component of the wave in T
+Bzw_arg:Bz component of the wave in T
 
-# Exw_arg:Ex component of the wave in V/m
+Exw_arg:Ex component of the wave in V/m
 
-# Eyw_arg:Ey component of the wave in V/m
+Eyw_arg:Ey component of the wave in V/m
 
-# Ezw_arg:Ez component of the wave in V/m
+Ezw_arg:Ez component of the wave in V/m
 _____________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________
 
 **Reference**:
 _____________________________________________________________________________________________________________________
+
+Li, J., Bortnik, J., Xie, L., Pu, Z., Chen, L., Ni, B., et al. (2015). Comparison of formulas for resonant
+interactions between energetic electrons and oblique whistler-mode waves. Physics of Plasmas 22,
+052902
 _________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________
 

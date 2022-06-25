@@ -28,22 +28,26 @@ ________________________________________________________________________________
 **Outputs**:
 _____________________________________________________________________________________________________________________
 
-# Bxw_arg:Bx component of the wave in T
+Bxw_arg:Bx component of the wave in T
 
-# Byw_arg:By component of the wave in T
+Byw_arg:By component of the wave in T
 
-# Bzw_arg:Bz component of the wave in T
+Bzw_arg:Bz component of the wave in T
 
-# Exw_arg:Ex component of the wave in V/m
+Exw_arg:Ex component of the wave in V/m
 
-# Eyw_arg:Ey component of the wave in V/m
+Eyw_arg:Ey component of the wave in V/m
 
-# Ezw_arg:Ez component of the wave in V/m
+Ezw_arg:Ez component of the wave in V/m
 _____________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________
 
 **Reference**:
 _____________________________________________________________________________________________________________________
+
+Bell, T. F. (1984). The nonlinear gyroresonance interaction between energetic electrons and coherent vlf
+waves propagating at an arbitrary angle with respect to the earth’s magnetic field. Journal of Geophysical
+Research: Space Physics 89, 905–918
 _________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________
 

@@ -36,6 +36,8 @@ ________________________________________________________________________________
 
 **Reference**:
 _____________________________________________________________________________________________________________________
+
+Kimura, I. (1966). Effects of ions on whistler-mode ray tracing. Radio Science 1, 269–283
 ______________________________________________________________________________________________________________________
 ________________________________________________________________________________________________________________________
 
@@ -44,20 +46,6 @@ ________________________________________________________________________________
 import numpy as np
 from WPIT.Environment_mod import const
 
-#####waveproperties_mod.ref_index##############################
-
-#Description:Routine to calculate the the refractive index and the wave numbers
-#Inputs:
-
-#Outputs:
-# eta_sq_plus: the plus (+) root of the dispersion relation
-# eta_sq_minus: the minus (-) root of the dispersion relation
-# ref_ind: refractive index (for the 𝑛2>0 root)
-# kappa: wave number
-# kappa_par: parallel component of the wave number
-# kappa_per: perpendicular component of the wave number
-
-##############################################################
 
 def refr_index_full(theta_arg,w_wave_arg,S_arg,P_arg,R_arg,L_arg):
     A=S_arg*np.sin(theta_arg)*np.sin(theta_arg)+P_arg*np.cos(theta_arg)*np.cos(theta_arg)

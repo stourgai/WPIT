@@ -46,7 +46,7 @@ def enhancement_factor(ray_file_name):
     fig.add_subplot(111)
 
 
-    bins=np.arange(0.05,4.05,0.1)
+    bins=np.arange(np.mean(L_new)-2,np.mean(L_new)+2,0.1)
 
     plt.hist(L_new,bins=bins,range=[0,4],density=True,weights=mag_new,color='tab:blue')
     # sns.displot(L_new,weights=mag_new,kde=False, discrete=True, bins=bins)

@@ -17,12 +17,12 @@ def ray_plots(ray_file_name):
     posx=df.posx
     posy=df.posy
     posz=df.posz
-    vprelx=df.vprelx
-    vprely=df.vprely
-    vprelz=df.vprelz
-    vgrelx=df.vgrelx
-    vgrely=df.vgrely
-    vgrelz=df.vgrelz
+    vphasex=df.vphasex
+    vphasey=df.vphasey
+    vphasez=df.vphasez
+    vgroupx=df.vgroupx
+    vgroupy=df.vgroupy
+    vgroupz=df.vgroupz
     nx=df.nx
     ny=df.ny
     nz=df.nz
@@ -83,23 +83,6 @@ def ray_plots(ray_file_name):
             L_new.append(L_int[i])
             mag_new.append(mag_int[i])
 
-#Figure parameters
-    fig_width_pt = 650.0  # Get this from LaTeX using \showthe\columnwidth
-    inches_per_pt = 1.0/72.27               # Convert pt to inch
-    golden_mean = (np.sqrt(5)-1.0)/2.0         # Aesthetic ratio
-    fig_width = 6  # width in inches
-    fig_height = 6      # height in inches
-    fig_size =  [fig_width+1,fig_height+1]
-    params = {'backend': 'ps',
-              'axes.labelsize': 14,
-              'font.size': 14,
-              'legend.fontsize': 14,
-              'xtick.labelsize': 14,
-              'ytick.labelsize': 14,
-              'text.usetex': False,
-              'figure.figsize': fig_size}
-    plt.rcParams.update(params)
-
     fig, ax1 = plt.subplots()
 
     color = 'tab:red'
@@ -113,11 +96,10 @@ def ray_plots(ray_file_name):
     ax1.legend()
     ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
     color = 'tab:blue'
-    ax2.set_ylabel('lat(deg)', color=color)  # we already handled the x-label with ax1
+    ax2.set_ylabel('lat(deg)', color=color) 
     ax2.plot(time,lat, color=color)
     ax2.tick_params(axis='y', labelcolor=color)
-    fig.tight_layout()  # otherwise the right y-label is slightly clipped
-    # ax2.axhline(y=0,color="black", linestyle="--")
+    fig.tight_layout() 
     ax1.legend()
 
     #----Power Plot------#
@@ -224,9 +206,9 @@ def ray_plots(ray_file_name):
     
     D2R = (np.pi/180.0)
     R_E = 6371e3
-    H_IONO=1000e3
+    R_IONO=1000e3
 
-    psize = 8                     # plot size in earth radii
+    plotsize = 8   
     # L_shells = [1.2,1.3,1.4,1.5,1.6,1.7,1.8,1.9,2,2.1,2.2,2.3,2.4,2.5,2.6,2.7,3, 4, 5, 6]    # Field lines to draw
     L_shells = [2,3, 4, 5, 6]
     fig, ax = plt.subplots(1,3)
@@ -237,8 +219,6 @@ def ray_plots(ray_file_name):
     tmp_coords.ticks = Ticktock(tvec_datetime)
     tmp_coords2=tmp_coords.convert('SM','sph')
     tmp_coords = tmp_coords.convert('MAG','car')
-    # print(tmp_coords[0])
-    # print(tmp_coords2[0])
 
     ref_indexs=coord.Coords(list(zip(nx, ny, nz)),'SM','car')
     tvec_datetime2 = [flashtime + dt.timedelta(seconds=s) for s in time]
@@ -250,12 +230,6 @@ def ray_plots(ray_file_name):
     tvec_datetime3 = [flashtime + dt.timedelta(seconds=s) for s in time]
     mag_field.ticks = Ticktock(tvec_datetime3)
     mag_field=mag_field.convert('MAG','car')
-
-    # print(tmp_coords[0])
-    # print(ref_indexs[0])
-    # print(mag_field[0])
-
-
 
 
     posx=tmp_coords.x
@@ -269,11 +243,10 @@ def ray_plots(ray_file_name):
     By=mag_field.z
 
 
-    # print(np.shape(tmp_coords))
-    # Plot the earth
+    #plot a circle for the earth and the ionosphere
     for i in [0, 1, 2]:
         earth = plt.Circle((0,0),1,color='0.5',alpha=1, zorder=100)
-        iono  = plt.Circle((0,0),(R_E + H_IONO)/R_E, color='c',alpha=0.5, zorder=99)
+        iono  = plt.Circle((0,0),(R_E + R_IONO)/R_E, color='c',alpha=0.5, zorder=99)
         ax[i].add_patch(earth)   
         ax[i].add_patch(iono)
         tmp_coords.sim_time = time
@@ -289,7 +262,6 @@ def ray_plots(ray_file_name):
         ax[2].plot(Lx,Ly,color='r',linewidth=1,linestyle='dashed')   # Field line
         ax[2].plot(-Lx,Ly,color='r',linewidth=1,linestyle='dashed')  # Field line (other side)
 
-        # Plot equatorial extent for the top-down view
         lam = np.linspace(-180,180,181)
         Lx2  = Lf*np.cos(lam*D2R)
         Ly2  = Lf*np.sin(lam*D2R)
@@ -301,7 +273,6 @@ def ray_plots(ray_file_name):
         tmp=i*np.pi/180
         qx=[np.cos(tmp),6*np.cos(tmp)]
         qy=[np.sin(tmp),6*np.sin(tmp)]
-        #print(qx,qy)
         ax[2].plot(qx,qy,'g--',linewidth=0.5)
         ax[1].plot(qx,qy,'g--',linewidth=0.5)
 
@@ -311,7 +282,7 @@ def ray_plots(ray_file_name):
     Bmagxz=np.sqrt(Bx**2+Bz**2)
     Bmagyz=np.sqrt(By**2+Bz**2)
     Bmag=np.sqrt(Bx**2+By**2+Bz**2)
-    # ax[0].plot(posx/R_E, posy/R_E, linewidth=lw)
+
     ax[0].plot(posx/R_E, posy/R_E, linewidth=lw)
     if posy[0] < 0:
         ax[1].plot(posx/R_E, posz/R_E, linewidth=lw, zorder=101)
@@ -345,12 +316,12 @@ def ray_plots(ray_file_name):
     ax[1].set_xlabel('L (R$_E$)')
     ax[0].set_ylabel('L (R$_E$)')
 
-    ax[0].set_xlim([-psize, psize])
-    ax[0].set_ylim([-psize, psize])
-    ax[1].set_xlim([0, psize])
-    ax[1].set_ylim([-psize/2, psize/2])
-    ax[2].set_xlim([-psize, psize])
-    ax[2].set_ylim([-psize, psize])
+    ax[0].set_xlim([-plotsize, plotsize])
+    ax[0].set_ylim([-plotsize, plotsize])
+    ax[1].set_xlim([0, plotsize])
+    ax[1].set_ylim([-plotsize/2, plotsize/2])
+    ax[2].set_xlim([-plotsize, plotsize])
+    ax[2].set_ylim([-plotsize, plotsize])
 
     ax[0].set_aspect('equal')
     ax[1].set_aspect('equal')
@@ -362,11 +333,11 @@ def ray_plots(ray_file_name):
     fig, axs = plt.subplots(2, 2)
 
     earth = plt.Circle((0,0),1,color='0.5',alpha=1, zorder=100)
-    iono  = plt.Circle((0,0),(R_E + H_IONO)/R_E, color='c',alpha=0.5, zorder=99)
+    iono  = plt.Circle((0,0),(R_E + R_IONO)/R_E, color='c',alpha=0.5, zorder=99)
     axs[0,0].add_patch(earth)   
     axs[0,0].add_patch(iono)
-    axs[0,0].set_xlim([-psize, psize])
-    axs[0,0].set_ylim([-psize, psize])
+    axs[0,0].set_xlim([-plotsize, plotsize])
+    axs[0,0].set_ylim([-plotsize, plotsize])
 
     for Lf in L_shells:
         # Plot dipole field lines for both profile views
@@ -432,8 +403,8 @@ def ray_plots(ray_file_name):
 
 
 
-    axs[0,0].set_xlim([0, psize-2])
-    axs[0,0].set_ylim([-(psize-2)/2, (psize-2)/2])
+    axs[0,0].set_xlim([0, plotsize-2])
+    axs[0,0].set_ylim([-(plotsize-2)/2, (plotsize-2)/2])
 
     # axs[0,0].set_aspect('equal')
     # axs[0,1].set_aspect('equal')
@@ -445,11 +416,11 @@ def ray_plots(ray_file_name):
     fig, axs = plt.subplots()
 
     earth = plt.Circle((0,0),1,color='0.5',alpha=1, zorder=100)
-    iono  = plt.Circle((0,0),(R_E + H_IONO)/R_E, color='c',alpha=0.5, zorder=99)
+    iono  = plt.Circle((0,0),(R_E + R_IONO)/R_E, color='c',alpha=0.5, zorder=99)
     axs.add_patch(earth)   
     axs.add_patch(iono)
-    axs.set_xlim([-psize, psize])
-    axs.set_ylim([-psize, psize])
+    axs.set_xlim([-plotsize, plotsize])
+    axs.set_ylim([-plotsize, plotsize])
 
     for Lf in L_shells:
         # Plot dipole field lines for both profile views
@@ -487,8 +458,8 @@ def ray_plots(ray_file_name):
     axs.set_xlabel('L-shell')
     axs.set_ylabel('L-shell')
 
-#     axs.set_xlim([0, psize])
-#     axs.set_ylim([-(psize)/2, (psize)/2])
+#     axs.set_xlim([0, plotsize])
+#     axs.set_ylim([-(plotsize)/2, (plotsize)/2])
     axs.set_xlim([1.9, 2.3])
     axs.set_ylim([-0.5, 0.5])
     # axs[0,0].set_aspect('equal')

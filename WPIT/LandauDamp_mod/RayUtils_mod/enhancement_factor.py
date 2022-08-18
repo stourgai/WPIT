@@ -50,6 +50,8 @@ def enhancement_factor(ray_file_name):
 
     plt.hist(L_new,bins=bins,range=[0,4],density=True,weights=mag_new,color='tab:blue')
     # sns.displot(L_new,weights=mag_new,kde=False, discrete=True, bins=bins)
+    plt.xlabel('L shell')
+    plt.ylabel('Cavity enhancment')
     plt.grid()
 
     plt.show()

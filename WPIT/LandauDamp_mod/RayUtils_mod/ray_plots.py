@@ -17,12 +17,12 @@ def ray_plots(ray_file_name):
     posx=df.posx
     posy=df.posy
     posz=df.posz
-    vphasex=df.vphasex
-    vphasey=df.vphasey
-    vphasez=df.vphasez
-    vgroupx=df.vgroupx
-    vgroupy=df.vgroupy
-    vgroupz=df.vgroupz
+    vphasex=df.vprelx
+    vphasey=df.vprely
+    vphasez=df.vprelz
+    vgroupx=df.vgrelx
+    vgroupy=df.vgrelx
+    vgroupz=df.vgrelx
     nx=df.nx
     ny=df.ny
     nz=df.nz
@@ -88,13 +88,14 @@ def ray_plots(ray_file_name):
     color = 'tab:red'
     ax1.set_xlabel('time (s)')
     ax1.set_ylabel('w ', color=color)
+    ax1.set_title('Wave frequency, lower hybrid resonance frequency \n  and ray latitude as a function of time')
     ax1.plot(time,wlhr, color=color,label='$\omega_{LHR}$')
     ax1.plot(time,w, color="tab:pink",label='$\omega_{wave}$')
     ax1.tick_params(axis='y', labelcolor=color)
     ax1.set_xlim(0,np.max(time))
     ax1.grid(alpha=.3)
     ax1.legend()
-    ax2 = ax1.twinx()  # instantiate a second axes that shares the same x-axis
+    ax2 = ax1.twinx()  
     color = 'tab:blue'
     ax2.set_ylabel('lat(deg)', color=color) 
     ax2.plot(time,lat, color=color)
@@ -108,7 +109,7 @@ def ray_plots(ray_file_name):
 
     ax2.set_ylim(0,1)
     ax2.set_xlim(0,np.max(time))
-
+    ax2.set_title('Landau damping')
     ax2.set_xlabel('Time [sec]')
     ax2.set_ylabel('Normalised Wave Power')
 
@@ -125,7 +126,7 @@ def ray_plots(ray_file_name):
 
     ax2.set_xlabel('Time [sec]')
     ax2.set_ylabel('L Shell')
-
+    ax2.set_title('Ray L shell ')
     ax2.plot(time,L,c='tab:green', alpha=0.75)
     plt.grid(axis='both', alpha=.3)
     plt.show()
@@ -139,7 +140,7 @@ def ray_plots(ray_file_name):
 
     ax2.set_xlabel('Time [sec]')
     ax2.set_ylabel('Latitude [deg]')
-
+    ax2.set_title('Ray latitude ')
     ax2.plot(time,lat,c='tab:orange', alpha=0.75)
     plt.grid(axis='both', alpha=.3)
     plt.show()
@@ -153,7 +154,7 @@ def ray_plots(ray_file_name):
 
     ax2.set_xlabel('Time [sec]')
     ax2.set_ylabel('$\psi$ [deg]')
-
+    ax2.set_title('Wave Normal Angle ')
     ax2.plot(time,psi,c='tab:green', alpha=0.75)
     plt.grid(axis='both', alpha=.3)
     plt.show()    
@@ -167,7 +168,7 @@ def ray_plots(ray_file_name):
 
     ax2.set_xlabel('Time [sec]')
     ax2.set_ylabel('Refractive Index')
-
+    ax2.set_title('Refractive Index')
     ax2.plot(time,ref_ind,c='tab:red', alpha=0.75)
     plt.grid(axis='both', alpha=.3)    
 
@@ -176,6 +177,7 @@ def ray_plots(ray_file_name):
     ax=fig5.add_subplot(111)
     ax.set_xlabel("Time [s]",fontsize=14)
     ax.set_ylabel("L-shell",color='tab:green',fontsize=14)
+    ax.set_title('Ray L shell and Latitude')
     ax.plot(time,L,color='tab:green')
     ax.grid(alpha=.3)
     ax.set_xlim(0,np.max(time))
@@ -191,6 +193,7 @@ def ray_plots(ray_file_name):
     ax=fig5.add_subplot(111)
     ax.set_xlabel("Time [s]",fontsize=14)
     ax.set_ylabel("Wave normal angle (deg)",color='tab:green',fontsize=14)
+    ax.set_title('Ray Refractive Index and Latitude')
     ax.plot(time,psi,color='tab:green')
     ax.grid(alpha=.3)
     ax.set_xlim(0,np.max(time))
@@ -307,6 +310,7 @@ def ray_plots(ray_file_name):
     else:
         ax[2].plot(posy/R_E, posz/R_E, linewidth=lw, zorder=10)
 
+    plt.title('Ray Path')
     ax[0].set_title('XY')
     ax[1].set_title('XZ')
     ax[2].set_title('YZ')
@@ -457,11 +461,11 @@ def ray_plots(ray_file_name):
 
     axs.set_xlabel('L-shell')
     axs.set_ylabel('L-shell')
-
+    axs.set_title('Ray Path \n with color coded Landau Damping')
 #     axs.set_xlim([0, plotsize])
 #     axs.set_ylim([-(plotsize)/2, (plotsize)/2])
-    axs.set_xlim([1.9, 2.3])
-    axs.set_ylim([-0.5, 0.5])
+    axs.set_xlim([2.5, 5.1])
+    axs.set_ylim([-2, 2])
     # axs[0,0].set_aspect('equal')
     # axs[0,1].set_aspect('equal')
     # axs[1,0].set_aspect('equal')

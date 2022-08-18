@@ -24,7 +24,7 @@ ________________________________________________________________________________
 
 The WPIT code has been tested in Ubuntu 18.04LST with Python 3.6.9. The version of the packages for testing are:
 
-- matplotlib 3.6.9
+- matplotlib 3.2.0
 - numpy 1.19.5
 - scipy 1.5.4
 - pandas 1.1.5

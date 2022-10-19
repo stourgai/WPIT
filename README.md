@@ -61,3 +61,5 @@ The software is provided "as is", without warranty of any kind, express or impli
 ________________________________________________________________________________________________________________________________________________________
 
 ### Funding
+
+![Funding](hfri_funding.png)

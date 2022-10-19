@@ -40,3 +40,24 @@ The *requirements.txt* contains all the package dependencies of WPIT. To install
 ```pip install -r requirements.txt```
 
 Just clone the repository and WPIT is ready to run.
+
+________________________________________________________________________________________________________________________________________________________
+
+### Copyright
+
+© 2022 Tourgaidis and Sarris.
+WPIT is an open-access code distributed under the terms of the
+Creative Commons Attribution License (CC BY). The use, distribution or
+reproduction in other forums is permitted, provided the original
+author(s) and the copyright owner(s) are credited and that the following
+publication describing the code is cited, in accordance with accepted
+academic practice:
+
+Tourgaidis, S., & Sarris, T. Wave-Particle Interactions Toolset (WPIT): a Python-based toolset to model wave-particle interactions in the magnetosphere. Frontiers in Astronomy and Space Sciences, 295.
+
+
+The software is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and non infringement. In no event shall the authors or copyright holders be liable for any claim, damages or other liability, whether in an action of contract, tort or otherwise, arising from, out of or in connection with the software or the use or other dealings in the software.
+
+________________________________________________________________________________________________________________________________________________________
+
+### Funding
